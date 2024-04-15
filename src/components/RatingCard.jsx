@@ -3,7 +3,9 @@ import React from "react";
 function RatingCard(props) {
   return (
     <div>
-      <div className="flex flex-col justify-between rounded-md border border-neutral-800 bg-black p-8 shadow-sm max-w-sm mx-auto mt-24">
+<h2 className="py-4 text-center text-purple-400 font-bold text-2xl">Client Reviews</h2>
+
+      <div className="flex flex-col justify-between rounded-md border border-neutral-800 bg-black p-4 shadow-sm max-w-sm mx-auto my-8">
         {/* <!-- stars --> */}
         <div className="text-violet-500 flex gap-2">
           <svg

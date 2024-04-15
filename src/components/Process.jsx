@@ -5,8 +5,11 @@ function Process() {
     <div>
       <section className="relative overflow-hidden bg-purple-200 dark:bg-gray-900">
         <div className="mt-2 md:mt-0 py-4 pb-4 sm:py-16 lg:pb-24 overflow-hidden">
+        <h2 className="text-center text-purple-400 font-bold text-2xl">Our Process</h2>
           <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8 relative">
+            
             <div className="relative mt-8 lg:mt-8">
+                
               <div className="absolute inset-x-0 hidden xl:px-44 top-2 md:block md:px-20 lg:px-28">
                 <svg
                   className="w-full"
