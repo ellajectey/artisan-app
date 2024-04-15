@@ -45,7 +45,7 @@ function Registration(props) {
       
           try {
           
-          const response = await fetch(`${process.env.REACT_APP_ARTISCHED_API}/users`,{
+          const response = await fetch(`${process.env.REACT_APP_ARTISCHED_API}/add-user`,{
               method: "POST",
               headers: {
                 "Content-Type": "application/json",
