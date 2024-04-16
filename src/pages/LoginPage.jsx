@@ -22,7 +22,7 @@ function LoginPage() {
         password: Yup.string().required("Required"),
       });
     
-      const [visible, setVisible] = useState(true);
+      const [visible, setVisible] = useState(false);
     
       async function onSubmit(values) {
         let body = {
@@ -108,7 +108,7 @@ function LoginPage() {
                     </div>
 
                     <div className="mt-6 ">
-                      <div className="flex ml-6 inline-block rounded-lg text-white">
+                      <div className="flex ml-6 inline-block rounded-lg text-black">
                         <FormikControl
                           control="input"
                           name="password"
