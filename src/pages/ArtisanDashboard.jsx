@@ -1,4 +1,6 @@
 import React from 'react';
+import navlogo from "../assets/artisched-green.png";
+
 
 function ArtisanDashboard(props) {
     return (
@@ -6,9 +8,9 @@ function ArtisanDashboard(props) {
             <div className="h-full w-full flex overflow-hidden antialiased text-gray-800 bg-white">
                 {/* <!-- section body side nav --> */}
                 <nav aria-label="side bar" aria-orientation="vertical"
-                    className="flex-none flex flex-col items-center text-center bg-teal-900 text-gray-400 border-r">
+                    className="min-h-full flex-none flex flex-col items-center text-center bg-teal-900 text-gray-400 border-r">
                     <div className="h-16 flex items-center w-full">
-                        <img className="h-6 w-6 mx-auto" src="https://raw.githubusercontent.com/bluebrown/tailwind-zendesk-clone/master/public/assets/leaves.png" />
+                        <img className="h-6 w-6 mx-auto" src={navlogo}  />
                     </div>
 
                     <ul>
