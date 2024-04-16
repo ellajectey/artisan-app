@@ -4,7 +4,7 @@ function Hero() {
   return (
     <div>
       <div className="bg-cover min-h-screen w-full bg-[url('./assets/basket-pattern.jpg')]">
-        <div className="pt-60 min-h-screen bg-purple-900 bg-opacity-40">
+        <div className="pt-60 min-h-screen bg-purple-900 bg-opacity-20">
           <h1 className="text-center font-bold text-white text-5xl">
             Artisan Scheduler
           </h1>

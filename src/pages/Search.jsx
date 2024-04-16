@@ -12,7 +12,7 @@ function Search(props)
 
   const getArtisans = () => {
     fetch(
-      `${process.env.REACT_APP_ARTISCHED_API}/artisans`
+      `${process.env.REACT_APP_ARTISCHED_API}/get-artisans`
     )
       .then((res) => res.json())
       .then((json) => setArtisanList(json.results));
@@ -35,7 +35,7 @@ function Search(props)
         <div className="p-1 flex flex-wrap items-center justify-center">
             {/* mapping of card components here */}
             {artisanList.map((artisans) => (
-        <div  key={artisans.email} className="flex-shrink-0 m-6 relative overflow-hidden bg-fuchsia-800 rounded-lg max-w-xs shadow-lg">
+        <div className="flex-shrink-0 m-6 relative overflow-hidden bg-purple-900 rounded-lg max-w-xs shadow-lg">
           <svg
             className="absolute bottom-0 left-0 mb-8"
             viewBox="0 0 375 283"
@@ -79,15 +79,15 @@ function Search(props)
             <span className="block opacity-75 -mb-1">{artisans.firstName}</span>
             <span className="block opacity-75 -mb-1">{artisans.job}</span>
             <div className="flex justify-between">
-              <span className="block font-semibold text-xl">{artisans.category}</span>
-              <span className="block font-medium text-xl">{artisans.location}</span>
-              <span className="block bg-white rounded-full text-orange-500 text-xs font-bold px-3 py-2 leading-none flex items-center">
+              <span className="block font-semibold text-xl">{artisans.location}</span>
+              <span className="block font-medium text-xl">location</span>
+              <span className="block bg-white rounded-full text-orange-500 text-xs font-bold mx-4 px-3 py-2 leading-none flex items-center">
                 ₵10/hr
               </span>
             </div>
           </div>
         </div>
-         ))}
+          ))} 
         </div>
         </div>
     );
