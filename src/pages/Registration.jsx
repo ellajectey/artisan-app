@@ -6,7 +6,12 @@ import FormikControl from "./formAuth/FormikControl";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 
-function Registration(props) {
+function Registration() {
+
+  const radioOptions = [
+    {key:'Client', value:"roption1"},
+    {key:'Artisan', value:"roption2"}
+  ]
 
     const [initialValues, setInitialValues] = useState({
         firstName: "",
@@ -14,6 +19,7 @@ function Registration(props) {
         email: "",
         password: "",
         confirmPassword: "",
+        radioOption: ""
       });
     
       const navigate = useNavigate();
@@ -26,9 +32,11 @@ function Registration(props) {
         confirmPassword: Yup.string()
           .oneOf([Yup.ref("password"), ""], "Passwords must match")
           .required("Required"),
+        radioOption: Yup.string().required("Required"),
+
       });
     
-      const [visible,setVisible] = useState(true);
+      const [visible,setVisible] = useState(false);
      
     
     
@@ -44,8 +52,15 @@ function Registration(props) {
         console.log('register body: ', body);
       
           try {
+
+            let endpoint = "";
+      if (values.radioOption === "roption1") {
+        endpoint = `${process.env.REACT_APP_ARTISCHED_API}/add-user`;
+      } else if (values.radioOption === "roption2") {
+        endpoint = `${process.env.REACT_APP_ARTISCHED_API}/add-artisan`;
+      }
           
-          const response = await fetch(`${process.env.REACT_APP_ARTISCHED_API}/add-user`,{
+          const response = await fetch(endpoint,{
               method: "POST",
               headers: {
                 "Content-Type": "application/json",
@@ -194,6 +209,15 @@ function Registration(props) {
                         </div>
                     </div>
                   </div>
+                     
+                      <FormikControl
+                        control="radio"
+                        name="radioOption"
+                        label="Register as:"
+                        options={radioOptions} 
+                        className="ml-6 px-8 text-white"
+                      />
+                      
                   <br />
                   <div className=" mt-2 ">
                     <span className="block w-80 rounded-md ">
