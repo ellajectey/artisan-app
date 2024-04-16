@@ -11,47 +11,43 @@ function Navbar() {
           <div className="flex items-center justify-between">
             <div className="flex shrink-0">
               <a aria-current="page" className="flex items-center" href="/">
-                <img
+               {/* <img
                   className="h-9 w-auto rounded-sm"
-                  src={navlogo}
-                  alt="Artisched horizontal logo"
-                />
+                  src="https://www.kindpng.com/picc/m/76-762651_roof-hd-png-download.png" alt="Artisched horizontal logo"
+                />  */}
+                <span className="font-['Metropolis'] text-fuchsia-100 font-medium text-xl">ArtiSched</span>
                 <p className="sr-only">Artisan Scheduler</p>
               </a>
             </div>
             <div className="hidden md:flex md:items-center md:justify-center md:gap-5">
               <a
                 aria-current="page"
-                className="inline-block rounded-lg px-2 py-1 text-sm font-medium text-gray-900 transition-all duration-200 hover:bg-gray-100 hover:text-gray-900"
+                className="inline-block rounded-lg px-2 py-1 text-sm font-medium text-gray-300 transition-all duration-200  hover:text-purple-500"
                 href="#"
               >
                 Home
               </a>
               <a
-                className="inline-block rounded-lg px-2 py-1 text-sm font-medium text-gray-900 transition-all duration-200 hover:bg-gray-100 hover:text-gray-900"
+                className="inline-block rounded-lg px-2 py-1 text-sm font-medium text-gray-300 transition-all duration-200  hover:text-purple-500"
                 href="#"
               >
                 About Us
               </a>
+              
               <a
-                className="inline-block rounded-lg px-2 py-1 text-sm font-medium text-gray-900 transition-all duration-200 hover:bg-gray-100 hover:text-gray-900"
-                href="#"
-              >
-                Our Process
-              </a>
-              <a
-                className="inline-block rounded-lg px-2 py-1 text-sm font-medium text-gray-900 transition-all duration-200 hover:bg-gray-100 hover:text-gray-900"
+                className="inline-block rounded-lg px-2 py-1 text-sm font-medium text-gray-300 transition-all duration-200 hover:text-purple-500"
                 href="#"
               >
                 Reviews
               </a>
               <a
-                className="inline-block rounded-lg px-2 py-1 text-sm font-medium text-gray-900 transition-all duration-200 hover:bg-gray-100 hover:text-gray-900"
+                className="inline-block rounded-lg px-2 py-1 text-sm font-medium text-gray-300 transition-all duration-200  hover:text-purple-500"
                 href="#"
               >
                 Contact Us
               </a>
-              <i className="fa-solid fa-magnifying-glass text-white"></i>
+              
+              
             </div>
             <div className="flex items-center justify-end gap-3">
               <Link
