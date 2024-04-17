@@ -24,7 +24,7 @@ function Search(props) {
 
   return (
     <div>
-      <div className="h-40 bg-cover bg-[url('./assets/basket-pattern.jpg')]">
+      <div className="h-40 bg-cover bg-[url('./assets/basket-pattern.jpg')]">           
         <Navbar />
       </div>
       <Searchbar />
