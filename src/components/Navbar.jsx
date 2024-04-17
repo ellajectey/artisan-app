@@ -36,7 +36,7 @@ function Navbar() {
               
               <a
                 className="inline-block rounded-lg px-2 py-1 text-sm font-medium text-gray-300 transition-all duration-200 hover:text-purple-500"
-                href="#"
+                href="#review"
               >
                 Reviews
               </a>
