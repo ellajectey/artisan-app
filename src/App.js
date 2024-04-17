@@ -6,6 +6,7 @@ import Inbox from "./pages/Inbox"
 import ArtisanDashboard from "./pages/ArtisanDashboard"
 import Appointment from "./pages/Appointment"
 import UserDashboard from "./pages/UserDashboard"
+import Search from "./pages/Search";
 
 
 
@@ -15,6 +16,7 @@ const router = createBrowserRouter([
   { path: "/", element: <Homepage/> },
   { path: "/login", element: <LoginPage/> },
   { path: "/register", element: <Registration/> },
+  { path: "/search", element: <Search/> },
   { path: "/inbox", element: <Inbox/> },
   { path: "/artisan-dashboard", element: <ArtisanDashboard/> },
   { path: "/appointment", element: <Appointment/> },

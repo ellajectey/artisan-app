@@ -1,5 +1,8 @@
 import React from 'react';
 import navlogo from "../assets/artisched-green.png";
+import MessageCard from "../components/MessageCard";
+import ArtisanProfile from "../components/ArtisanProfile";
+import RatingForm from "../components/RatingForm";
 
 
 function ArtisanDashboard(props) {
@@ -8,7 +11,7 @@ function ArtisanDashboard(props) {
             <div className="h-full w-full flex overflow-hidden antialiased text-gray-800 bg-white">
                 {/* <!-- section body side nav --> */}
                 <nav aria-label="side bar" aria-orientation="vertical"
-                    className="min-h-full flex-none flex flex-col items-center text-center bg-teal-900 text-gray-400 border-r">
+                    className="min-h-full flex-none flex flex-col items-center text-center bg-black text-gray-400 border-r">
                     <div className="h-16 flex items-center w-full">
                         <img className="h-6 w-6 mx-auto" src={navlogo}  />
                     </div>
@@ -73,118 +76,6 @@ function ArtisanDashboard(props) {
 
                         {/* <!-- top bar left --> */}
                         <ul aria-label="top bar left" aria-orientation="horizontal" className="flex">
-                            {/* <!-- add button --> */}
-                            <li className="group relative">
-                                <button aria-controls="add" aria-expanded="false" aria-haspopup="listbox" className="flex items-center h-full px-4 text-sm">
-                                    <i>
-                                        <svg className="fill-current w-3 h-3 mx-auto" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                                            <path d="M24 10h-10v-10h-2v10h-10v2h10v10h2v-10h10z" />
-                                        </svg>
-                                    </i>
-                                    <span className="ml-2">Add</span>
-                                </button>
-                                <span className="absolute p-1 hidden group-hover:block">
-                                    <ul id="add" role="listbox" className="outline-none py-2 bg-white border rounded-md w-screen max-w-md w-dropdown-large shadow-lg focus:outline-none leading-relaxed">
-                                        <li role="separator" className="mb-2">
-                                            <label className="block px-4 py-3 font-semibold">
-                                                New
-                                            </label>
-                                            <hr />
-                                        </li>
-                                        <li role="option" className="px-6 py-1 my-1 focus:outline-none focus:bg-blue-100 hover:bg-blue-100 cursor-pointer">
-                                            Ticket
-                                        </li>
-                                        <li role="option" className="px-6 py-1 my-1 focus:outline-none focus:bg-blue-100 hover:bg-blue-100 cursor-pointer">
-                                            User
-                                        </li>
-                                        <li role="option" className="px-6 py-1 my-1 focus:outline-none focus:bg-blue-100 hover:bg-blue-100 cursor-pointer">
-                                            Organization
-                                        </li>
-                                        <li role="option" className="px-6 py-1 my-1 focus:outline-none focus:bg-blue-100 hover:bg-blue-100 cursor-pointer">
-                                            Search
-                                        </li>
-                                        <li role="separator" className="mb-2">
-                                            <label className="block px-4 py-3 font-semibold">Recently Viewed</label>
-                                            <hr />
-                                        </li>
-                                        <li role="option" className="px-6 py-1 my-1 focus:outline-none focus:bg-blue-100 hover:bg-blue-100 cursor-pointer">
-                                            <div className="flex">
-                                                <div className="pr-2">
-                                                    <span style={{ padding: '2px 5px', fontSize: '0.7rem' }} className="font-mono rounded-sm bg-red-600 text-white leading-none">O</span>
-                                                </div>
-                                                <div className="flex-1">
-                                                    <p>Vertias - ams opps issue</p>
-                                                    <p className="text-gray-600">
-                                                        <span>#ticket/14352</span>
-                                                        <span className="mx-1 font-black">&#183;</span>
-                                                        <span>Nico Braun</span>
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li role="option" className="px-6 py-1 my-1 focus:outline-none focus:bg-blue-100 hover:bg-blue-100 cursor-pointer">
-                                            <div className="flex">
-                                                <div className="pr-2">
-                                                    <span style={{ padding: '2px 5px', fontSize: '0.7rem' }} className="font-mono rounded-sm bg-yellow-400 text-black leading-none">N</span>
-                                                </div>
-                                                <div className="flex-1">
-                                                    <p>Vertias - ams opps issue</p>
-                                                    <p className="text-gray-600">
-                                                        <span>#ticket/14352</span>
-                                                        <span className="mx-1 font-black">&#183;</span>
-                                                        <span>Nico Braun</span>
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li role="option" className="px-6 py-1 my-1 focus:outline-none focus:bg-blue-100 hover:bg-blue-100 cursor-pointer">
-                                            <div className="flex">
-                                                <div className="pr-2">
-                                                    <span style={{ padding: '2px 5px', fontSize: '0.7rem' }} className="font-mono rounded-sm bg-gray-500 text-white leading-none">S</span>
-                                                </div>
-                                                <div className="flex-1">
-                                                    <p>Vertias - ams opps issue</p>
-                                                    <p className="text-gray-600">
-                                                        <span>#ticket/14352</span>
-                                                        <span className="mx-1 font-black">&#183;</span>
-                                                        <span>Nico Braun</span>
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li role="option" className="px-6 py-1 my-1 focus:outline-none focus:bg-blue-100 hover:bg-blue-100 cursor-pointer">
-                                            <div className="flex">
-                                                <div className="pr-2">
-                                                    <span style={{ padding: '2px 5px', fontSize: '0.7rem' }} className="font-mono rounded-sm bg-blue-600 text-white leading-none">P</span>
-                                                </div>
-                                                <div className="flex-1">
-                                                    <p>Vertias - ams opps issue</p>
-                                                    <p className="text-gray-600">
-                                                        <span>#ticket/14352</span>
-                                                        <span className="mx-1 font-black">&#183;</span>
-                                                        <span>Nico Braun</span>
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li role="option" className="px-6 py-1 my-1 focus:outline-none focus:bg-blue-100 hover:bg-blue-100 cursor-pointer">
-                                            <div className="flex">
-                                                <div className="pr-2">
-                                                    <span style={{ padding: '2px 5px', fontSize: '0.7rem' }} className="font-mono rounded-sm bg-gray-800 text-white leading-none">H</span>
-                                                </div>
-                                                <div className="flex-1">
-                                                    <p>Vertias - ams opps issue</p>
-                                                    <p className="text-gray-600">
-                                                        <span>#ticket/14352</span>
-                                                        <span className="mx-1 font-black">&#183;</span>
-                                                        <span>Nico Braun</span>
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </span>
-                            </li>
                         </ul>
 
                         {/* <!-- to bar right  --> */}
@@ -238,6 +129,9 @@ function ArtisanDashboard(props) {
                     <header aria-label="page caption" className="flex-none flex h-16 bg-gray-100 border-t px-4 items-center">
                         <h1 id="page-caption" className="font-semibold text-lg">Dashboard</h1>
                     </header>
+                    <ArtisanProfile/>
+                    <RatingForm/>
+                    <MessageCard/>
             </div>
         </div>
         </div>

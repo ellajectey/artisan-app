@@ -1,24 +1,22 @@
-import React from "react";
-import axios from "axios";
-import {useEffect,useState} from "react";
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import Searchbar from '../components/searchbar';
+import Navbar from '../components/Navbar';
 
-function Artisancard() 
- {
+function Search(props) {
   const [artisanList, setArtisanList] = useState([]);
 
   useEffect(() => {
-    const getArtisans = async () => {
-      try {
-        const response = await axios.get(`${process.env.REACT_APP_ARTISCHED_API}/get-artisans`, {
-          params: {
-            limit: 5 // Limit the number of results to 5
-          }
-        });
-        setArtisanList(response.data);
-      } catch (error) {
+
+  const getArtisans = async () => {
+    try{
+      const response = await axios.get(`${process.env.REACT_APP_ARTISCHED_API}/get-artisans`);
+      setArtisanList(response.data);
+      
+    } catch(error) {
         console.error('Error fetching artisan:', error);
       }
-    };
+  };
     getArtisans();
   }, []);
 
@@ -26,10 +24,14 @@ function Artisancard()
 
   return (
     <div>
+      <div className="h-40 bg-cover bg-[url('./assets/basket-pattern.jpg')]">           
+        <Navbar />
+      </div>
+      <Searchbar />
       <div className="p-1 flex flex-wrap items-center justify-center">
         {/* Mapping of card components here */}
         {artisanList.map((artisan) => (
-          <div key={artisan.id} className="flex-shrink-0 m-6 relative overflow-hidden bg-purple-900 rounded-lg max-w-xs shadow-lg" style={{ flexBasis: '20%' }}>
+          <div key={artisan.id} className="flex-shrink-0 m-6 relative overflow-hidden bg-purple-900 rounded-lg max-w-xs shadow-lg">
             <svg
               className="absolute bottom-0 left-0 mb-8"
               viewBox="0 0 375 283"
@@ -83,10 +85,8 @@ function Artisancard()
           </div>
         ))}
       </div>
-      </div>
-   
-);
- 
+    </div>
+  );
 }
 
-export default Artisancard;
+export default Search;
