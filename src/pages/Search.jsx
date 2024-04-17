@@ -5,6 +5,7 @@ import Navbar from '../components/Navbar';
 
 function Search(props) {
   const [artisanList, setArtisanList] = useState([]);
+  const [artisanListCopy, setArtisanListCopy] = useState([]);
 
   useEffect(() => {
 
@@ -12,6 +13,7 @@ function Search(props) {
     try{
       const response = await axios.get(`${process.env.REACT_APP_ARTISCHED_API}/get-artisans`);
       setArtisanList(response.data);
+      setArtisanListCopy(response.data);
       
     } catch(error) {
         console.error('Error fetching artisan:', error);
@@ -22,12 +24,41 @@ function Search(props) {
 
   console.log("artisanList:", artisanList); // Log artisanList here
 
+  function updateSearchInput(newInput){
+    let fullList = [...artisanListCopy];
+    let newList = [];
+    fullList.forEach(artisan => {
+      let fname = artisan.firstName.toLowerCase();
+      let lname = artisan.lastName.toLowerCase();
+      let location = artisan.location ? artisan.location.toLowerCase() : '-';
+      let job = artisan.job ? artisan.job.toLowerCase() : '-';
+      let category = artisan.category ? artisan.category.toLowerCase() : '-';
+
+      if (
+        fname.includes(newInput.toLowerCase()) ||
+        lname.includes(newInput.toLowerCase()) ||
+        location.includes(newInput.toLowerCase()) ||
+        category.includes(newInput.toLowerCase()) ||
+        job.includes(newInput.toLowerCase()) 
+
+      ) {
+        newList.push(artisan);
+      }
+      
+    });
+
+    newInput.length ? setArtisanList(newList) : setArtisanList([...fullList]);
+  }
+
   return (
     <div>
       <div className="h-40 bg-cover bg-[url('./assets/basket-pattern.jpg')]">           
         <Navbar />
+        <br/><br/>
+        <br/><br/>
+        <Searchbar updateSearchInput={updateSearchInput}/>
       </div>
-      <Searchbar />
+    
       <div className="p-1 flex flex-wrap items-center justify-center">
         {/* Mapping of card components here */}
         {artisanList.map((artisan) => (
@@ -66,18 +97,17 @@ function Search(props) {
                 }}
               ></div>
               <img
-                className="relative w-40"
+                className="relative w-40 h-40"
                 src={artisan.images.image1}
-                alt=""
+                alt="artisan's work"
               />
             </div>
             <div className="relative text-white px-6 pb-6 mt-6">
-              <span className="block opacity-75 -mb-1">{artisan.firstName}</span>
-              <span className="block opacity-75 -mb-1">{artisan.job}</span>
+              <span className="block opacity-75 -mb-1">{artisan.firstName} {artisan.lastName}</span>
+              <span className="block opacity-75 -mb-1">{artisan.job}.{artisan.category}</span>
               <div className="flex justify-between">
-                <span className="block font-semibold text-xl">{artisan.job}</span>
                 <span className="block font-medium text-xl">{artisan.location}</span>
-                <span className="block bg-white rounded-full text-orange-500 text-xs font-bold px-3 py-2 leading-none flex items-center">
+                <span className="block bg-white rounded-full text-orange-500 text-xs font-bold px-3 py-2 leading-none flex items-center mt-2">
                   ₵10/hr
                 </span>
               </div>

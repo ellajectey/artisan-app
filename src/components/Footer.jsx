@@ -23,9 +23,9 @@ function Footer(props) {
                     <a className="my-3 block" href="/#">Privacy Policy <span className="text-teal-600 text-xs p-1"></span></a>
                     <a className="my-3 block" href="/#">FAQs <span className="text-teal-600 text-xs p-1"></span></a>
                 </div>
-                <div className="p-5">
+                <div id="contact"className="p-5">
                     <div className="text-sm uppercase text-white font-bold">Contact us</div>
-                    <a className="my-3 block" href="/#">+233 432 5678, North Industrial Area,Accra-Ghana <span className="text-teal-600 text-xs p-1"></span></a>
+                    <a className="my-3 block" href="/#">+233 432 5678, <br/>North Industrial Area,<br/>Accra-Ghana <span className="text-teal-600 text-xs p-1"></span></a>
                     <a className="my-3 block" href="/#">info@artisched.com <span className="text-teal-600 text-xs p-1"></span></a>
                 </div>
             </div>

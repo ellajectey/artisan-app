@@ -9,7 +9,7 @@ import Artisancard from '../components/Artisancard';
 
 function Homepage() {
     return (
-        <div>
+        <div id="home">
            <Navbar/>
            <Hero/>
            <Process/>
