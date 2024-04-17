@@ -16,7 +16,7 @@ function ArtisanProfile(props) {
 
             {/* <!-- FullName --> */}
             <h1 className="w-full text-left my-4 sm:mx-4 xs:pl-4 text-gray-800 dark:text-white lg:text-4xl md:text-3xl sm:text-3xl xs:text-xl font-serif">
-              Samuel Abera
+              Samuel Antwi
             </h1>
           </div>
 
@@ -26,10 +26,7 @@ function ArtisanProfile(props) {
               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quisquam
               debitis labore consectetur voluptatibus mollitia dolorem veniam
               omnis ut quibusdam minima sapiente repellendus asperiores
-              explicabo, eligendi odit, dolore similique fugiat dolor,
-              doloremque eveniet. Odit, consequatur. Ratione voluptate
-              exercitationem hic eligendi vitae animi nam in, est earum culpa
-              illum aliquam.
+             
             </p>
 
             {/* <!-- Detail --> */}
