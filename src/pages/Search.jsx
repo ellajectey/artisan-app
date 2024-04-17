@@ -6,17 +6,17 @@ import Navbar from '../components/Navbar';
 function Search(props) {
   const [artisanList, setArtisanList] = useState([]);
 
-  const getArtisans = () => {
-    axios.get(`${process.env.REACT_APP_ARTISCHED_AP}/get-artisans`)
-      .then((response) => {
-        setArtisanList(response.data.results);
-      })
-      .catch((error) => {
-        console.error('Error fetching artisans:', artisanList);
-      });
-  };
-
   useEffect(() => {
+
+  const getArtisans = async () => {
+    try{
+      const response = await axios.get(`${process.env.REACT_APP_ARTISCHED_API}/get-artisans`);
+      setArtisanList(response.data);
+      
+    } catch(error) {
+        console.error('Error fetching artisan:', error);
+      }
+  };
     getArtisans();
   }, []);
 
@@ -30,8 +30,8 @@ function Search(props) {
       <Searchbar />
       <div className="p-1 flex flex-wrap items-center justify-center">
         {/* Mapping of card components here */}
-        {artisanList.map((artisans) => (
-          <div key={artisans.id} className="flex-shrink-0 m-6 relative overflow-hidden bg-purple-900 rounded-lg max-w-xs shadow-lg">
+        {artisanList.map((artisan) => (
+          <div key={artisan.id} className="flex-shrink-0 m-6 relative overflow-hidden bg-purple-900 rounded-lg max-w-xs shadow-lg">
             <svg
               className="absolute bottom-0 left-0 mb-8"
               viewBox="0 0 375 283"
@@ -67,16 +67,16 @@ function Search(props) {
               ></div>
               <img
                 className="relative w-40"
-                src="https://user-images.githubusercontent.com/2805249/64069899-8bdaa180-cc97-11e9-9b19-1a9e1a254c18.png"
+                src={artisan.images.image1}
                 alt=""
               />
             </div>
             <div className="relative text-white px-6 pb-6 mt-6">
-              <span className="block opacity-75 -mb-1">{artisans.firstName}</span>
-              <span className="block opacity-75 -mb-1">{artisans.job}</span>
+              <span className="block opacity-75 -mb-1">{artisan.firstName}</span>
+              <span className="block opacity-75 -mb-1">{artisan.job}</span>
               <div className="flex justify-between">
-                <span className="block font-semibold text-xl">{artisans.job}</span>
-                <span className="block font-medium text-xl">{artisans.location}</span>
+                <span className="block font-semibold text-xl">{artisan.job}</span>
+                <span className="block font-medium text-xl">{artisan.location}</span>
                 <span className="block bg-white rounded-full text-orange-500 text-xs font-bold px-3 py-2 leading-none flex items-center">
                   ₵10/hr
                 </span>
