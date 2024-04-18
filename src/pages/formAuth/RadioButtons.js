@@ -17,7 +17,7 @@ function RadioButtons(props) {
                                 <input type='radio' id={option.value} {...field} value={option.value}
                                 checked={field.value === option.value}
                                 className='ml-8  '/>
-                                <label htmlFor={option.value} className=' text-white hover:text-purple-300'>{option.key}</label>
+                                <label htmlFor={option.value} className=' text-white hover:text-orange-300'>{option.key}</label>
                             </React.Fragment>
                         )
                        }) 

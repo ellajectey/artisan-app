@@ -3,7 +3,7 @@ import React from "react";
 function Artisancard() {
   return (
     <>
-      <h2 className="py-8 text-center text-purple-400 font-bold text-2xl">
+      <h2 className="py-8 text-center text-orange-400 font-bold text-2xl">
         Featured Artisans
       </h2>
 

@@ -7,14 +7,14 @@ function UserDashboard(props) {
             <div className="h-full w-full flex overflow-hidden antialiased text-gray-800 bg-white">
                 {/* <!-- section body side nav --> */}
                 <nav aria-label="side bar" aria-orientation="vertical"
-                    className="min-h-full flex-none flex flex-col items-center text-center bg-purple-900 text-gray-400 border-r">
+                    className="min-h-full flex-none flex flex-col items-center text-center bg-orange-900 text-gray-400 border-r">
                     <div className="h-16 flex items-center w-full">
                         <img className="h-8 w-8 mx-auto" src={navlogo} />
                     </div>
 
                     <ul>
                         <li>
-                            <a title="Home" href="#home" className="h-16 px-6 flex items-center text-white bg-purple-400 w-full">
+                            <a title="Home" href="#home" className="h-16 px-6 flex items-center text-white bg-orange-400 w-full">
                                 <i className="mx-auto">
                                     <svg className="fill-current h-5 w-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                                         <path d="M12 6.453l9 8.375v9.172h-6v-6h-6v6h-6v-9.172l9-8.375zm12 5.695l-12-11.148-12 11.133 1.361 1.465 10.639-9.868 10.639 9.883 1.361-1.465z" />

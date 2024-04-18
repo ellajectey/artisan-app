@@ -5,7 +5,7 @@ function services(props) {
        
 
 <div className="container relative z-40 mx-auto mt-12">
-<h2 className="py-8 text-center text-purple-400 font-bold text-2xl">Service Categories</h2>
+<h2 className="py-8 text-center text-orange-400 font-bold text-2xl">Service Categories</h2>
 
     <div className="flex flex-wrap justify-center mx-auto lg:w-full md:w-5/6 xl:shadow-small-blue">
 
@@ -13,7 +13,7 @@ function services(props) {
             <div>
                 <img src="https://redpixelthemes.com/assets/images/icon-portfolio-green.svg" className="block mx-auto"/>
 
-                <p className="pt-4 text-sm font-medium capitalize font-body text-purple-900 lg:text-lg md:text-base md:pt-6">
+                <p className="pt-4 text-sm font-medium capitalize font-body text-orange-900 lg:text-lg md:text-base md:pt-6">
                     portfolio
                 </p>
             </div>
@@ -23,7 +23,7 @@ function services(props) {
             <div>
                 <img src="https://redpixelthemes.com/assets/images/icon-blog-green.svg" className="block mx-auto"/>
 
-                <p className="pt-4 text-sm font-medium capitalize font-body text-purple-900 lg:text-lg md:text-base md:pt-6">
+                <p className="pt-4 text-sm font-medium capitalize font-body text-orange-900 lg:text-lg md:text-base md:pt-6">
                     blog
                 </p>
             </div>
@@ -33,7 +33,7 @@ function services(props) {
             <div>
                 <img src="https://redpixelthemes.com/assets/images/icon-ecommerce-green.svg" className="block mx-auto"/>
 
-                <p className="pt-4 text-sm font-medium capitalize font-body text-purple-900 lg:text-lg md:text-base md:pt-6">
+                <p className="pt-4 text-sm font-medium capitalize font-body text-orange-900 lg:text-lg md:text-base md:pt-6">
                     ecommerce
                 </p>
             </div>
@@ -43,7 +43,7 @@ function services(props) {
             <div>
                 <img src="https://redpixelthemes.com/assets/images/icon-startup-green.svg" className="block mx-auto"/>
 
-                <p className="pt-4 text-sm font-medium capitalize font-body text-purple-900 lg:text-lg md:text-base md:pt-6">
+                <p className="pt-4 text-sm font-medium capitalize font-body text-orange-900 lg:text-lg md:text-base md:pt-6">
                     startup
                 </p>
             </div>
@@ -53,7 +53,7 @@ function services(props) {
             <div>
                 <img src="https://redpixelthemes.com/assets/images/icon-business-green.svg" className="block mx-auto"/>
 
-                <p className="pt-4 text-sm font-medium capitalize font-body text-purple-900 lg:text-lg md:text-base md:pt-6">
+                <p className="pt-4 text-sm font-medium capitalize font-body text-orange-900 lg:text-lg md:text-base md:pt-6">
                     business
                 </p>
             </div>
@@ -63,7 +63,7 @@ function services(props) {
             <div>
                 <img src="https://redpixelthemes.com/assets/images/icon-lifestyle-green.svg" className="block mx-auto"/>
 
-                <p className="pt-4 text-sm font-medium capitalize font-body text-purple-900 lg:text-lg md:text-base md:pt-6">
+                <p className="pt-4 text-sm font-medium capitalize font-body text-orange-900 lg:text-lg md:text-base md:pt-6">
                     lifestyle
                 </p>
             </div>
@@ -73,7 +73,7 @@ function services(props) {
             <div>
                 <img src="https://redpixelthemes.com/assets/images/icon-landing-page-green.svg" className="block mx-auto"/>
 
-                <p className="pt-4 text-sm font-medium capitalize font-body text-purple-900 lg:text-lg md:text-base md:pt-6">
+                <p className="pt-4 text-sm font-medium capitalize font-body text-orange-900 lg:text-lg md:text-base md:pt-6">
                     landing pages
                 </p>
             </div>
@@ -83,7 +83,7 @@ function services(props) {
             <div>
                 <img src="https://redpixelthemes.com/assets/images/icon-health-green.svg" className="block mx-auto"/>
 
-                <p className="pt-4 text-sm font-medium capitalize font-body text-purple-900 lg:text-lg md:text-base md:pt-6">
+                <p className="pt-4 text-sm font-medium capitalize font-body text-orange-900 lg:text-lg md:text-base md:pt-6">
                     health
                 </p>
             </div>

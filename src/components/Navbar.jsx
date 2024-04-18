@@ -22,26 +22,26 @@ function Navbar() {
             <div className="hidden md:flex md:items-center md:justify-center md:gap-5">
               <Link
                 aria-current="page"
-                className="inline-block rounded-lg px-2 py-1 text-sm font-medium text-gray-300 transition-all duration-200  hover:text-purple-500"
+                className="inline-block rounded-lg px-2 py-1 text-sm font-medium text-gray-300 transition-all duration-200  hover:text-orange-500"
                 to="/"
               >
                 Home
               </Link>
               <a
-                className="inline-block rounded-lg px-2 py-1 text-sm font-medium text-gray-300 transition-all duration-200  hover:text-purple-500"
+                className="inline-block rounded-lg px-2 py-1 text-sm font-medium text-gray-300 transition-all duration-200  hover:text-orange-500"
                 href="#process"
               >
                 Our Process
               </a>
               
               <a
-                className="inline-block rounded-lg px-2 py-1 text-sm font-medium text-gray-300 transition-all duration-200 hover:text-purple-500"
+                className="inline-block rounded-lg px-2 py-1 text-sm font-medium text-gray-300 transition-all duration-200 hover:text-orange-500"
                 href="#review"
               >
                 Reviews
               </a>
               <a
-                className="inline-block rounded-lg px-2 py-1 text-sm font-medium text-gray-300 transition-all duration-200  hover:text-purple-500"
+                className="inline-block rounded-lg px-2 py-1 text-sm font-medium text-gray-300 transition-all duration-200  hover:text-orange-500"
                 href="#footer"
               >
                 Contact Us
@@ -58,7 +58,7 @@ function Navbar() {
                 Sign up
               </Link>
               <Link
-                className="inline-flex items-center justify-center rounded-xl bg-purple-900 px-3 py-2 text-sm font-semibold text-white shadow-sm transition-all duration-150 hover:bg-purple-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
+                className="inline-flex items-center justify-center rounded-xl bg-orange-900 px-3 py-2 text-sm font-semibold text-white shadow-sm transition-all duration-150 hover:bg-orange-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600"
                 to="/login"
               >
                 Login

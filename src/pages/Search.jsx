@@ -61,7 +61,7 @@ function Search(props) {
       <div className="p-1 flex flex-wrap items-center justify-center">
         {/* Mapping of card components here */}
         {artisanList.map((artisan) => (
-          <div key={artisan.id} className="flex-shrink-0 m-6 relative overflow-hidden bg-purple-900 rounded-lg max-w-xs shadow-lg">
+          <div key={artisan.id} className="flex-shrink-0 m-6 relative overflow-hidden bg-orange-900 rounded-lg max-w-xs shadow-lg">
             <svg
               className="absolute bottom-0 left-0 mb-8"
               viewBox="0 0 375 283"
