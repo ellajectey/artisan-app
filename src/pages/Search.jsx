@@ -8,7 +8,6 @@ function Search(props) {
   const [artisanListCopy, setArtisanListCopy] = useState([]);
 
   useEffect(() => {
-
   const getArtisans = async () => {
     try{
       const response = await axios.get(`${process.env.REACT_APP_ARTISCHED_API}/get-artisans`);

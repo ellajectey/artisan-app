@@ -9,7 +9,7 @@ import { useState } from "react";
 function Registration() {
   const radioOptions = [
     { key: "Client", value: "roption1" },
-    { key: "Artisan", value: "roption2" },
+    { key: "Artisan", value: "roption2" }
   ];
 
   const [initialValues, setInitialValues] = useState({
@@ -94,37 +94,59 @@ function Registration() {
               {(formik) => {
                 return (
                   <Form>
-                    <div className="flex justify-center gap-x-28">
+                    <div className="flex justify-center gap-x-12">
                       <div className="mt-1 relative rounded-md ">
+<div>
+                      <FormikControl
+                          control="radio"
+                          name="radioOption"
+                          label="Register as:"
+                          options={radioOptions}
+                          className="ml-6 px-8 text-white"
+                        />
+                      </div>
+
+                      {formik.values.radioOption === "roption2" && (
+                        <div className="mt-4">
+                          <h3 className="text-white">Payment Details</h3>
+                          <label className="text-white">
+                            Pay Registration Fee:
+                          </label>
+                          <select className=" bg-purple-300 text-purple-800 focus:outline-none">
+                            <option>Pay Pal</option>
+                            <option>Card</option>
+                            <option>Mobile Money</option>
+                          </select>
+
+                          <FormikControl
+                            control="input"
+                            type="text"
+                            name="paymentMethod"
+                            placeholder="Payment Method"
+                            className="mt-2 appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5"
+                          />
+                        </div>
+                      )}
+                      <div className="mt-4"></div>
+                    <div/>
+
                         <FormikControl
                           control="input"
                           type="text"
                           name="firstName"
                           placeholder="first name"
-                          className="appearance-none block w-30 justify-center px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5"
+                          className="appearance-none block w-60 justify-center px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5"
                         />
-                        <div className="hidden absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
-                          <svg
-                            className="h-5 w-5 text-red-500"
-                            fill="currentColor"
-                            viewBox="0 0 20 20"
-                          >
-                            <path
-                              fillRule="evenodd"
-                              d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z"
-                              clipRule="evenodd"
-                            ></path>
-                          </svg>
+                                              
                         </div>
-                      </div>
 
-                      <div className=" flex justify-center mt-1 relative rounded-md ">
+                      <div className=" mt-4 relative rounded-md ">
                         <FormikControl
                           control="input"
                           type="text"
                           name="lastName"
                           placeholder="last name"
-                          className="appearance-none block w-30 justify-center px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5"
+                          className="appearance-none block w-60 justify-center px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5"
                         />
                         <div className="hidden absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
                           <svg
@@ -152,31 +174,8 @@ function Registration() {
                           className="appearance-none w-80 justify-center px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5
                 "
                         />
-                        {/* <div className="hidden absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
-                          <svg
-                            className="h-5 w-5 text-red-500"
-                            fill="currentColor"
-                            viewBox="0 0 20 20"
-                          >
-                            <path
-                              fillRule="evenodd"
-                              d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z"
-                              clipRule="evenodd"
-                            ></path>
-                          </svg>
-
+</div>
                         </div>
-                         */}
-
-                        <FormikControl
-                          control="radio"
-                          name="radioOption"
-                          label="Register as:"
-                          options={radioOptions}
-                          className="ml-6 px-8 text-white"
-                        />
-                      </div>
-                    </div>
 
                     <div className="flex justify-between">
                       <div className="mt-6">
