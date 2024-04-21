@@ -16,8 +16,8 @@ function RadioButtons(props) {
                             <React.Fragment key={option.key}>
                                 <input type='radio' id={option.value} {...field} value={option.value}
                                 checked={field.value === option.value}
-                                className='ml-8  '/>
-                                <label htmlFor={option.value} className=' text-white hover:text-orange-300'>{option.key}</label>
+                                className='ml-8 '/>
+                                <label htmlFor={option.value} className=' text-white hover:text-orange-300 py-8'>{option.key}</label>
                             </React.Fragment>
                         )
                        }) 

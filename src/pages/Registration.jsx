@@ -1,5 +1,5 @@
 import React from "react";
-import img from "../assets/artisched-purple.png";
+import img from "../assets/artisched-orange-logo.png";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import FormikControl from "./formAuth/FormikControl";
@@ -9,7 +9,7 @@ import { useState } from "react";
 function Registration() {
   const radioOptions = [
     { key: "Client", value: "roption1" },
-    { key: "Artisan", value: "roption2" }
+    { key: "Artisan", value: "roption2" },
   ];
 
   const [initialValues, setInitialValues] = useState({
@@ -71,7 +71,7 @@ function Registration() {
   }
 
   return (
-    <div className="bg-cover bg-[url('./assets/basket-pattern.jpg')]">
+    <div className="bg-cover bg-[url('./assets/newbg.jpg')]">
       <div className="min-h-screen  bg-indigo-600 bg-opacity-70 flex flex-col justify-center py-4 sm:px-6 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-md">
           <img
@@ -94,41 +94,10 @@ function Registration() {
               {(formik) => {
                 return (
                   <Form>
-                    <div className="flex justify-center gap-x-12">
+                    <div className="flex mx-6 gap-x-12">
                       <div className="mt-1 relative rounded-md ">
-<div>
-                      <FormikControl
-                          control="radio"
-                          name="radioOption"
-                          label="Register as:"
-                          options={radioOptions}
-                          className="ml-6 px-8 text-white"
-                        />
-                      </div>
-
-                      {formik.values.radioOption === "roption2" && (
-                        <div className="mt-4">
-                          <h3 className="text-white">Payment Details</h3>
-                          <label className="text-white">
-                            Pay Registration Fee:
-                          </label>
-                          <select className=" bg-orange-300 text-orange-800 focus:outline-none">
-                            <option>Pay Pal</option>
-                            <option>Card</option>
-                            <option>Mobile Money</option>
-                          </select>
-
-                          <FormikControl
-                            control="input"
-                            type="text"
-                            name="paymentMethod"
-                            placeholder="Payment Method"
-                            className="mt-2 appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5"
-                          />
-                        </div>
-                      )}
-                      <div className="mt-4"></div>
-                    <div/>
+                        <div className="mt-4 "></div>
+                        
 
                         <FormikControl
                           control="input"
@@ -137,8 +106,8 @@ function Registration() {
                           placeholder="first name"
                           className="appearance-none block w-60 justify-center px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5"
                         />
-                                              
-                        </div>
+                        
+                      </div>
 
                       <div className=" mt-4 relative rounded-md ">
                         <FormikControl
@@ -164,7 +133,7 @@ function Registration() {
                       </div>
                     </div>
 
-                    <div className=" flex mx-8 mt-6">
+                    <div className=" flex mx-6 mt-6">
                       <div className=" flex relative rounded-md mt-2 ">
                         <FormikControl
                           control="input"
@@ -174,8 +143,8 @@ function Registration() {
                           className="appearance-none w-80 justify-center px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5
                 "
                         />
-</div>
-                        </div>
+                      </div>
+                    </div>
 
                     <div className="flex justify-between">
                       <div className="mt-6">
@@ -185,7 +154,7 @@ function Registration() {
                             type={visible ? "text" : "password"}
                             name="password"
                             placeholder="password"
-                            className="appearance-none block w-30 px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5"
+                            className="appearance-none block w-60 px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5"
                           />
                           <div
                             className="flex items-center text-center justify-center p-2 "
@@ -207,7 +176,7 @@ function Registration() {
                             type={visible ? "text" : "password"}
                             name="confirmPassword"
                             placeholder="confirm Password"
-                            className="appearance-none block w-30 px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5"
+                            className="appearance-none block w-60 px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5"
                           />
                           <div
                             className="flex items-center text-center justify-center p-2 "
@@ -222,7 +191,36 @@ function Registration() {
                         </div>
                       </div>
                     </div>
+                    <div>
+                      <FormikControl
+                        control="radio"
+                        name="radioOption"
+                        label="Register as:"
+                        options={radioOptions}
+                        className="ml-6 px-8 py-8 text-white"
+                      />
+                    </div>
+                    {formik.values.radioOption === "roption2" && (
+                      <div className="mt-4 mx-6">
+                        <h3 className="text-white">Payment Details</h3>
+                        <label className="text-white">
+                          Pay Registration Fee:
+                        </label>
+                        <select className=" bg-white text-orange-800 focus:outline-none">
+                          <option>Pay Pal</option>
+                          <option>Card</option>
+                          <option>Mobile Money</option>
+                        </select>
 
+                        <FormikControl
+                          control="input"
+                          type="text"
+                          name="paymentMethod"
+                          placeholder="Pay ₵200.00"
+                          className="mt-2 appearance-none block w-80 px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5"
+                        />
+                      </div>
+                    )}
                     <br />
                     <div className=" mt-2 ">
                       <span className="block w-80 rounded-md ">

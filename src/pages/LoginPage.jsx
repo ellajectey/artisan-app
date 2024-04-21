@@ -1,6 +1,6 @@
 
 import React, { useState } from "react";
-import img from "../assets/artisched-purple.png";
+import img from "../assets/artisched-orange-logo.png";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import { useNavigate } from "react-router-dom";
@@ -62,7 +62,7 @@ function LoginPage() {
       
 
     return (
-        <div className="bg-cover bg-[url('./assets/basket-pattern.jpg')]">
+        <div className="bg-cover bg-[url('./assets/newbg.jpg')]">
             <div className="min-h-screen bg-indigo-600 bg-opacity-70 flex flex-col justify-center py-12 sm:px-6 lg:px-8 px-6 ">
         <div className="sm:mx-auto sm:w-full sm:max-w-md">
           <img className="mx-auto w-20 h-20 w-auto bg-black rounded-full" src={img} alt="Artisched logo" />

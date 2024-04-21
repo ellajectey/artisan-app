@@ -1,5 +1,5 @@
 import React from 'react';
-import img from "../assets/artisched-p-noBg.png";
+import img from "../assets/artisched-orange-nobg.png";
 
 
 function Footer(props) {

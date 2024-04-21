@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Searchbar from "../components/searchbar";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+import placeholderImage from "../assets/artisched-orange-logo.png"
 
 function Search(props) {
   const [artisanList, setArtisanList] = useState([]);
@@ -69,7 +71,7 @@ function Search(props) {
         {artisanList.map((artisan) => (
           <div
             key={artisan.id}
-            className="flex-shrink-0 m-6 relative overflow-hidden bg-orange-900 rounded-lg max-w-xs shadow-lg"
+            className="flex-shrink-0 m-6 relative overflow-hidden bg-orange-600 rounded-lg max-w-xs shadow-lg"
           >
             <svg
               className="absolute bottom-0 left-0 mb-8"
@@ -104,11 +106,27 @@ function Search(props) {
                   opacity: "0.2",
                 }}
               ></div>
-              <img
+              {/* <img
                 className="relative w-40 h-40"
                 src={artisan.images.image1}
                 alt="artisan's work"
-              />
+              /> */}
+              
+      {artisan.images.image1 ? (
+        <img
+          className="relative w-40 h-40"
+          src={artisan.images.image1}
+          alt="artisan's work"
+        />
+      ) : (
+        <img
+          className="relative w-40 h-40"
+          src={placeholderImage}
+          alt="Placeholder"
+        />
+      )}
+    
+              
             </div>
             <div className="relative text-white px-6 pb-6 mt-6">
               <span className="block opacity-75 -mb-1">
@@ -129,6 +147,7 @@ function Search(props) {
           </div>
         ))}
       </div>
+      <Footer/>
     </div>
   );
 }
