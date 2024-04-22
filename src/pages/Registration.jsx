@@ -72,7 +72,7 @@ function Registration() {
 
   return (
     <div className="bg-cover bg-[url('./assets/newbg.jpg')]">
-      <div className="min-h-screen  bg-indigo-600 bg-opacity-70 flex flex-col justify-center py-4 sm:px-6 lg:px-8">
+      <div className="min-h-screen  bg-black bg-opacity-30 flex flex-col justify-center py-4 sm:px-6 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-md">
           <img
             className="mx-auto w-20 h-20 w-auto bg-black rounded-full"

@@ -3,9 +3,9 @@ import React from "react";
 function Process() {
   return (
     <div>
-      <section className="relative overflow-hidden bg-gradient-to-r from-red-400 to-orange-400">
+      <section className="relative overflow-hidden bg-white">
         <div className="mt-2 md:mt-0 py-4 pb-4 sm:py-16 lg:pb-24 overflow-hidden">
-        <h2 id="process" className="text-center text-red-600 font-bold text-2xl">Our Process</h2>
+        <h2 id="process" className="text-center text-orange-600 font-bold text-2xl">Our Process</h2>
           <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8 relative">
             
             <div className="relative mt-8 lg:mt-8">
@@ -35,7 +35,7 @@ function Process() {
                       1
                     </span>
                   </div>
-                  <h3 className="mt-4 sm:mt-6 text-xl font-semibold leading-tight text-yellow-200  md:mt-10">
+                  <h3 className="mt-4 sm:mt-6 text-xl font-semibold leading-tight text-orange-400  md:mt-10">
                     Register & Login
                   </h3>
                   <p className="mt-3 sm:mt-4 text-base text-gray-600 ">
@@ -48,7 +48,7 @@ function Process() {
                       2
                     </span>
                   </div>
-                  <h3 className="mt-4 sm:mt-6 text-xl font-semibold leading-tight text-yellow-200 md:mt-10">
+                  <h3 className="mt-4 sm:mt-6 text-xl font-semibold leading-tight text-orange-400 md:mt-10">
                     Select Artisan
                   </h3>
                   <p className="mt-3 sm:mt-4 text-base text-gray-600 dark:text-gray-400">
@@ -61,7 +61,7 @@ function Process() {
                       3
                     </span>
                   </div>
-                  <h3 className="mt-4 sm:mt-6 text-xl font-semibold leading-tight text-yellow-200  md:mt-10">
+                  <h3 className="mt-4 sm:mt-6 text-xl font-semibold leading-tight text-orange-400  md:mt-10">
                     Book An Appointment
                   </h3>
                   <p className="mt-3 sm:mt-4 text-base text-gray-600 dark:text-gray-400">

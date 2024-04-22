@@ -21,11 +21,14 @@ useEffect(()=> {
 
   return (
     <div>
-<h2 id="review" className="py-4 text-center text-orange-400 font-bold text-2xl">Client Reviews</h2>
+      <p className="text-orange-600 font-bold text-2xl text-center">Client Reviews</p>
+    <div className="grid grid-cols-3 grid-rows-1 gap-4">
+
 {ratingList.map((ratings)=>(
+  <div>
       <div 
       key={ratings.id} 
-      className="flex flex-col justify-between rounded-md border border-neutral-800 bg-black p-4 shadow-sm max-w-sm mx-auto my-8">
+      className="flex flex-col justify-between rounded-md border border-neutral-800 bg-black p-4 shadow-sm max-w-sm mx-auto my-8 ">
         {/* <!-- stars --> */}
         <div className="text-orange-500 flex gap-2">
           <p>{ratings.rating}/5</p>
@@ -47,7 +50,7 @@ useEffect(()=> {
           
         </div>
 
-        <p className="my-4 mb-0 text-base font-normal leading-relaxed tracking-wide text-gray-400">
+        <p className="my-4 mb-0 text-base font-normal leading-relaxed tracking-wide text-gray-400 line-clamp-3">
           {ratings.description}
         </p>
 
@@ -76,8 +79,10 @@ useEffect(()=> {
             </p>
           </div>
         </div>
+    </div>
       </div>
       ))}
+    </div>
     </div>
   );
 }

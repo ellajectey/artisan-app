@@ -5,12 +5,12 @@ function Hero() {
   return (
     <div>
       <div className="bg-cover min-h-screen w-full bg-[url('./assets/newbg.jpg')]">
-        <div className="py-80 min-h-screen">
-          <h1 className="text-center font-bold text-black text-5xl">
+        <div className="py-80 min-h-screen bg-black bg-opacity-30">
+          <h1 className="text-center font-bold text-white text-5xl">
             Artisan Scheduler
           </h1>
           <br />
-          <h2 className="text-center font-semibold text-black text-3xl">
+          <h2 className="text-center font-semibold text-white text-3xl">
             Artisans On-Demand: Book, Create, Achieve
           </h2>
           <div className="flex justify-center ">
