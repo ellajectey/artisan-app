@@ -14,7 +14,7 @@ function Hero() {
             Artisans On-Demand: Book, Create, Achieve
           </h2>
           <div className="flex justify-center ">
-            <button className="bg-orange-700 px-8 py-4 rounded-lg text-white my-4"><Link to="/search"> Find Artisan <i class="fa-solid fa-arrow-right"></i></Link> </button>
+            <button className="bg-orange-700 px-8 py-4 rounded-lg text-white my-4"><Link to="/search"> Find Artisan <i className="fa-solid fa-arrow-right"></i></Link> </button>
           </div>
           
           <br/>

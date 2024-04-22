@@ -20,12 +20,12 @@ useEffect(()=> {
 }, []);
 
   return (
-    <div>
+    <div id="reviews">
       <p className="text-orange-600 font-bold text-2xl text-center">Client Reviews</p>
     <div className="grid grid-cols-3 grid-rows-1 gap-4">
 
-{ratingList.map((ratings)=>(
-  <div>
+{ratingList.map((ratings, key)=>(
+  <div key={key}>
       <div 
       key={ratings.id} 
       className="flex flex-col justify-between rounded-md border border-neutral-800 bg-black p-4 shadow-sm max-w-sm mx-auto my-8 ">

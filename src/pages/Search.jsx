@@ -1,33 +1,56 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import Searchbar from "../components/searchbar";
+import Searchbar from "../components/Searchbar";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import placeholderImage from "../assets/artisched-orange-logo.png"
+import { useLocation } from "react-router-dom";
 
-function Search(props) {
+function Search() {
+
+  const location = useLocation();
+  const {search} = location;
+  // const {hash, pathname, search} = location;
+  // console.log('search: ', search.substring(1));
+
+  const [triggered, setRetriggered] = useState(1);
+  const [loadingData, setLoadingData] = useState(true);
   const [artisanList, setArtisanList] = useState([]);
   const [artisanListCopy, setArtisanListCopy] = useState([]);
 
   useEffect(() => {
+    setLoadingData(true);
     const getArtisans = async () => {
       try {
         const response = await axios.get(
           `${process.env.REACT_APP_ARTISCHED_API}/get-artisans`
         );
-        setArtisanList(response.data);
+
         setArtisanListCopy(response.data);
+
+        if (search === '') {
+          setArtisanList(response.data);
+          setLoadingData(false);
+        } else {
+            updateSearchInput(search.substring(1));
+        }
+
       } catch (error) {
         console.error("Error fetching artisan:", error);
+        setLoadingData(false);
       }
     };
     getArtisans();
-  }, []);
+  }, [triggered]);
 
-  console.log("artisanList:", artisanList); // Log artisanList here
+  // console.log("artisanList:", artisanList); // Log artisanList here
 
   function updateSearchInput(newInput) {
+    if (loadingData) {
+      setRetriggered(2);
+    }
     let fullList = [...artisanListCopy];
+    console.log('flist: ', fullList.length ? 'filled' : 'empty');
     let newList = [];
     fullList.forEach((artisan) => {
       let fname = artisan.firstName.toLowerCase();
@@ -46,31 +69,33 @@ function Search(props) {
         newList.push(artisan);
       }
     });
-        if (newInput !== '') {
-          
-          setArtisanList(newList);
-        } else {
-          setArtisanList([...fullList]);
-        }
+
+    if (newInput !== '' && search !== '?') {
+      setArtisanList(newList);
+    } else {
+      setArtisanList([...fullList]);
+    }
+
+    setTimeout(() => {
+      setLoadingData(false);
+    }, 1000);
   }
-  
 
   return (
     <div>
+      
       <div className="h-40 bg-cover bg-[url('./assets/basket-pattern.jpg')]">
-        <Navbar />
-        <br />
-        <br />
-        <br />
-        <br />
-        <Searchbar updateSearchInput={updateSearchInput} />
+        <Navbar/>
       </div>
 
       <div className="p-1 flex flex-wrap items-center justify-center">
+
+        <Searchbar updateSearchInput={updateSearchInput} />
+
         {/* Mapping of card components here */}
-        {artisanList.map((artisan) => (
+        {!loadingData && artisanList.map((artisan, key) => (
           <div
-            key={artisan.id}
+            key={key}
             className="flex-shrink-0 m-6 relative overflow-hidden bg-orange-600 rounded-lg max-w-xs shadow-lg"
           >
             <svg
@@ -147,6 +172,7 @@ function Search(props) {
           </div>
         ))}
       </div>
+
       <Footer/>
     </div>
   );

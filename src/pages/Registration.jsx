@@ -12,7 +12,7 @@ function Registration() {
     { key: "Artisan", value: "roption2" },
   ];
 
-  const [initialValues, setInitialValues] = useState({
+  const [initialValues] = useState({
     firstName: "",
     lastName: "",
     email: "",
@@ -94,11 +94,10 @@ function Registration() {
               {(formik) => {
                 return (
                   <Form>
-                    <div className="flex mx-6 gap-x-12">
-                      <div className="mt-1 relative rounded-md ">
-                        <div className="mt-4 "></div>
-                        
 
+                    {/* name */}
+                    <div className="flex mx-6 gap-x-12">
+                      <div className="mt-4 relative rounded-md">
                         <FormikControl
                           control="input"
                           type="text"
@@ -133,101 +132,105 @@ function Registration() {
                       </div>
                     </div>
 
-                    <div className=" flex mx-6 mt-6">
-                      <div className=" flex relative rounded-md mt-2 ">
+                    {/* email */}
+                    <div className="flex mx-6 mt-6">
+                      <div className="flex relative rounded-md mt-2 w-full">
                         <FormikControl
                           control="input"
                           type="email"
                           name="email"
                           placeholder="user@example.com"
-                          className="appearance-none w-80 justify-center px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5
-                "
+                          className="w-full appearance-none w-80 justify-center px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5"
                         />
                       </div>
                     </div>
 
-                    <div className="flex justify-between">
-                      <div className="mt-6">
-                        <div className=" flex ml-6 mt-1 rounded-md ">
-                          <FormikControl
-                            control="input"
-                            type={visible ? "text" : "password"}
-                            name="password"
-                            placeholder="password"
-                            className="appearance-none block w-60 px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5"
-                          />
-                          <div
-                            className="flex items-center text-center justify-center p-2 "
-                            onClick={() => setVisible(!visible)}
-                          >
-                            {visible ? (
-                              <i className="fas fa-eye text-gray-300"></i>
-                            ) : (
-                              <i className="fas fa-eye-slash text-gray-300"></i>
-                            )}
-                          </div>
-                        </div>
-                      </div>
-
-                      <div className="mt-6">
-                        <div className=" flex ml-6 mt-1 rounded-md ">
-                          <FormikControl
-                            control="input"
-                            type={visible ? "text" : "password"}
-                            name="confirmPassword"
-                            placeholder="confirm Password"
-                            className="appearance-none block w-60 px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5"
-                          />
-                          <div
-                            className="flex items-center text-center justify-center p-2 "
-                            onClick={() => setVisible(!visible)}
-                          >
-                            {visible ? (
-                              <i className="fas fa-eye text-gray-300"></i>
-                            ) : (
-                              <i className="fas fa-eye-slash text-gray-300"></i>
-                            )}
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div>
-                      <FormikControl
-                        control="radio"
-                        name="radioOption"
-                        label="Register as:"
-                        options={radioOptions}
-                        className="ml-6 px-8 py-8 text-white"
-                      />
-                    </div>
-                    {formik.values.radioOption === "roption2" && (
-                      <div className="mt-4 mx-6">
-                        <h3 className="text-white">Payment Details</h3>
-                        <label className="text-white">
-                          Pay Registration Fee:
-                        </label>
-                        <select className=" bg-white text-orange-800 focus:outline-none">
-                          <option>Pay Pal</option>
-                          <option>Card</option>
-                          <option>Mobile Money</option>
-                        </select>
-
+                    {/* passwords */}
+                    <div className="flex mx-6 gap-x-12 mt-4">
+                      <div className="mt-4 relative rounded-md">
                         <FormikControl
                           control="input"
-                          type="text"
-                          name="paymentMethod"
-                          placeholder="Pay ₵200.00"
-                          className="mt-2 appearance-none block w-80 px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5"
+                          type={visible ? "text" : "password"}
+                          name="password"
+                          placeholder="password"
+                          className="appearance-none block w-60 px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5"
+                        />
+                        <div
+                          className="flex items-center text-center justify-center p-2 "
+                          onClick={() => setVisible(!visible)}
+                        >
+                          {visible ? (
+                            <i className="fas fa-eye text-gray-300"></i>
+                          ) : (
+                            <i className="fas fa-eye-slash text-gray-300"></i>
+                          )}
+                        </div>
+                      </div>
+
+                      <div className="mt-4 relative rounded-md">
+                        <FormikControl
+                          control="input"
+                          type={visible ? "text" : "password"}
+                          name="confirmPassword"
+                          placeholder="confirm Password"
+                          className="appearance-none block w-60 px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5"
+                        />
+                        <div
+                          className="flex items-center text-center justify-center p-2 "
+                          onClick={() => setVisible(!visible)}
+                        >
+                          {visible ? (
+                            <i className="fas fa-eye text-gray-300"></i>
+                          ) : (
+                            <i className="fas fa-eye-slash text-gray-300"></i>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                        
+                    {/* others */}
+                    <div className="flex justify-between mx-6 mt-6">
+                      <div className="w-50">
+                        <FormikControl
+                          control="radio"
+                          name="radioOption"
+                          label="Register as:"
+                          options={radioOptions}
+                          className=" ml-6 px-8 my-8 text-white inline-block"
                         />
                       </div>
-                    )}
+
+                      {formik.values.radioOption === "roption2" && (
+                        <div className="w-50">
+                          <h3 className="text-white">Payment Details</h3>
+                          <label className="text-white">
+                            Pay Registration Fee:
+                          </label>
+                          
+                          <select className="mx-2 bg-white text-orange-800 focus:outline-none">
+                            <option>Pay Pal</option>
+                            <option>Card</option>
+                            <option>Mobile Money</option>
+                          </select>
+
+                          <FormikControl
+                            control="input"
+                            type="text"
+                            name="paymentMethod"
+                            placeholder="Pay ₵200.00"
+                            className="mt-2 appearance-none block w-60 px-3 py-2 border border-gray-300 rounded-md placeholder-gray-400 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 transition duration-150 ease-in-out sm:text-sm sm:leading-5"
+                          />
+                        </div>
+                      )}
+                    </div>
+                    
                     <br />
                     <div className=" mt-2 ">
-                      <span className="block w-80 rounded-md ">
+                      <span className=" mx-auto block w-80 rounded-md ">
                         <button
                           type="submit"
                           disabled={!formik.isValid}
-                          className="ml-6 w-80 py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-orange-500 hover:bg-orange-800 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition duration-150 ease-in-out"
+                          className=" ml-6 w-80 py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-orange-500 hover:bg-orange-800 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition duration-150 ease-in-out"
                         >
                           Register
                         </button>

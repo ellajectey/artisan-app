@@ -35,13 +35,13 @@ function Navbar() {
               
               <a
                 className="inline-block rounded-lg px-2 py-1 text-sm font-medium text-gray-300 transition-all duration-200 hover:text-orange-500"
-                href="#review"
+                href="#reviews"
               >
                 Reviews
               </a>
               <a
                 className="inline-block rounded-lg px-2 py-1 text-sm font-medium text-gray-300 transition-all duration-200  hover:text-orange-500"
-                href="#footer"
+                href="#contact"
               >
                 Contact Us
               </a>

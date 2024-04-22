@@ -10,9 +10,15 @@ import { Link } from "react-router-dom";
 
 function LoginPage() {
 
+    const radioOptions = [
+      { key: " Client", value: "roption1" },
+      { key: " Artisan", value: "roption2" },
+    ];
+
     const initialValues = {
         email: "",
         password: "",
+        radioOption: "roption1"
       };
     
       const navigate = useNavigate();
@@ -28,6 +34,7 @@ function LoginPage() {
         let body = {
           email: values.email,
           password: values.password,
+          type: values.radioOption === 'roption1' ? 'client' : 'artisan'
         };
     
         console.log("login body: ", body);
@@ -49,7 +56,14 @@ function LoginPage() {
           sessionStorage.setItem('user', JSON.stringify(responseData));
           if (token)
           {
-            navigate("/user-dashboard");
+            
+            if(body.type === "client"){
+              navigate("/user-dashboard");
+            }
+            else{
+              navigate("/artisan-dashboard");
+            }
+            
           }
           else{
             console.log("user not found")
@@ -126,6 +140,18 @@ function LoginPage() {
                             <i className="fas fa-eye-slash text-gray-300"></i>
                           )}
                         </div>
+                      </div>
+                    </div>
+
+                    <div className="flex justify-between">
+                      <div className="w-50">
+                        <FormikControl
+                          control="radio"
+                          name="radioOption"
+                          // label="Login as:"
+                          options={radioOptions}
+                          className=" ml-6 px-8 my-8 text-white inline-block"
+                        />
                       </div>
                     </div>
 
