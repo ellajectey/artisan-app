@@ -91,10 +91,10 @@ function services(props) {
 
         <a href="#" className="block w-1/2 py-10 text-center border border-black rounded-lg lg:w-1/4">
             <div>
-                <img src={wren} className="block mx-auto"/>
+                <img src={barb} className="block mx-auto"/>
 
                 <p className="pt-4 text-sm font-medium capitalize font-body text-orange-900 lg:text-lg md:text-base md:pt-6">
-                    Mechanics
+                    Hairstylists
                 </p>
             </div>
         </a>

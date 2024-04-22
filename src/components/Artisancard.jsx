@@ -4,7 +4,7 @@ function Artisancard() {
   return (
     <>
       <h2 className="py-8 text-center text-orange-400 font-bold text-2xl">
-        Featured Artisans
+        Top Rated Artisans
       </h2>
 
       <div className="p-1 flex flex-wrap items-center justify-center">
