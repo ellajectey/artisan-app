@@ -5,6 +5,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import placeholderImage from "../assets/artisched-orange-logo.png"
 import { useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Search() {
 
@@ -93,8 +94,10 @@ function Search() {
         <Searchbar updateSearchInput={updateSearchInput} />
 
         {/* Mapping of card components here */}
+        
         {!loadingData && artisanList.map((artisan, key) => (
-          <div
+           
+         <div
             key={key}
             className="flex-shrink-0 m-6 relative overflow-hidden bg-orange-600 rounded-lg max-w-xs shadow-lg"
           >
@@ -122,6 +125,7 @@ function Search() {
                 fill="white"
               />
             </svg>
+            <Link to={"/artisanDetails?"+ artisan.id}>
             <div className="relative pt-10 px-10 flex items-center justify-center">
               <div
                 className="block absolute w-48 h-48 bottom-0 left-0 -mb-24 ml-3"
@@ -136,12 +140,14 @@ function Search() {
                 src={artisan.images.image1}
                 alt="artisan's work"
               /> */}
-              
+         
       {artisan.images.image1 ? (
         <img
           className="relative w-40 h-40"
           src={artisan.images.image1}
           alt="artisan's work"
+          
+        
         />
       ) : (
         <img
@@ -153,6 +159,7 @@ function Search() {
     
               
             </div>
+            </Link>  
             <div className="relative text-white px-6 pb-6 mt-6">
               <span className="block opacity-75 -mb-1">
                 {artisan.firstName} {artisan.lastName}
