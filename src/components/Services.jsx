@@ -33,7 +33,7 @@ function Services({artisanListCopy}) {
         {img: build, title: 'Builders', value: 'building'},
         {img: weld, title: 'Welders', value: 'welder'},
         {img: fash, title: 'Fashion Designers', value: 'fashion designer'},
-        {img: land, title: 'Landscapers', value: 'landscaper'},
+        {img: land, title: 'Landscapers', value: 'gardening'||'landscapers'},
         {img: plum, title: 'Plumbers', value: 'plumber'},
         {img: ham, title: 'Carpenters', value: 'carpenter'},
         {img: barb, title: 'Hairstylists', value: 'hairstylist'}

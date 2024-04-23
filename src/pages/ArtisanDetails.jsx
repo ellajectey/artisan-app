@@ -7,6 +7,7 @@ import RatingCard from '../components/RatingCard.jsx';
 function ArtisanDetails({artisan}) {
 
     if(!artisan){
+        console.log(artisan);
         return<div>Artisan not found</div>;
     }
 
@@ -19,7 +20,7 @@ function ArtisanDetails({artisan}) {
     <div className="mx-auto max-w-screen-2xl px-4 md:px-8">
         <div className="mb-4 flex items-center justify-between gap-8 sm:mb-8 md:mb-12">
             <div className="flex items-center gap-12">
-                <h2 className="text-2xl font-bold text-gray-800 lg:text-3xl dark:text-white">Gallery</h2>
+                <h2 className="text-2xl font-bold text-gray-800 lg:text-3xl dark:text-white">My Work</h2>
 
                 <p className="hidden max-w-screen-sm text-gray-500 dark:text-gray-300 md:block">
                     {artisan.summary}

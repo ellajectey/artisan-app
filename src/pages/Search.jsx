@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import Searchbar from "../components/Searchbar";
+import Searchbar from "../components/searchbar";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import placeholderImage from "../assets/artisched-orange-logo.png"
@@ -89,9 +89,9 @@ function Search() {
         <Navbar/>
       </div>
 
-      <div className="p-1 flex flex-wrap items-center justify-center">
+      <Searchbar updateSearchInput={updateSearchInput} />
 
-        <Searchbar updateSearchInput={updateSearchInput} />
+      <div className="p-1 flex flex-wrap items-center justify-center">
 
         {/* Mapping of card components here */}
         
