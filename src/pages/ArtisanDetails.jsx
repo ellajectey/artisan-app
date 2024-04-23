@@ -7,7 +7,7 @@ import RatingCard from '../components/RatingCard.jsx';
 function ArtisanDetails({artisan}) {
 
     if(!artisan){
-        console.log(artisan);
+        console.log({artisan});
         return<div>Artisan not found</div>;
     }
 
