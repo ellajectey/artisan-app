@@ -1,8 +1,8 @@
 import React from "react";
 import Calendar from "./Calendar";
-import BookingCard from "../components/BookingCard";
+import BookingCard from "./BookingCard";
 
-function Sidebar(props) {
+function Appointments(props) {
   return (
     
       <div className="grid grid-cols-2 grid-rows-1 gap-4 w-auto mx-auto">
@@ -16,4 +16,4 @@ function Sidebar(props) {
   );
 }
 
-export default Sidebar;
+export default Appointments;

@@ -3,7 +3,7 @@ import navlogo from "../assets/artisched-green.png";
 import MessageCard from "../components/MessageCard";
 import ArtisanProfile from "../components/ArtisanProfile";
 import ImageGallery from '../components/ImageGallery';
-import Sidebar from '../components/Sidebar';
+import Appointments from '../components/Appointments';
 
 
 function ArtisanDashboard(props) {
@@ -112,7 +112,7 @@ function ArtisanDashboard(props) {
                         <h1 id="page-caption" className="font-semibold text-lg">Artisan Dashboard</h1>
                     </header>
                     <ArtisanProfile/>
-                    <Sidebar/>
+                    <Appointments/>
                     <ImageGallery/>
                     <MessageCard/>
             </div>
