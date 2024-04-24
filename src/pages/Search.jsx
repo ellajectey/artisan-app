@@ -28,6 +28,7 @@ function Search() {
         );
 
         setArtisanListCopy(response.data);
+        sessionStorage.setItem('artisans', JSON.stringify(response.data));
 
         if (search === '') {
           setArtisanList(response.data);
@@ -125,7 +126,7 @@ function Search() {
                 fill="white"
               />
             </svg>
-            <Link to={"/artisanDetails?"+ artisan.id}>
+            <Link to={"/artisanDetails/"+ artisan._id}>
             <div className="relative pt-10 px-10 flex items-center justify-center">
               <div
                 className="block absolute w-48 h-48 bottom-0 left-0 -mb-24 ml-3"

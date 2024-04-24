@@ -7,6 +7,7 @@ import { useLocation } from 'react-router-dom';
 import RatingForm from '../components/RatingForm';
 import PaymentForm from '../components/PaymentForm';
 import UserAppointments from '../components/UserAppointments';
+import Receipt from '../components/Receipt';
 
 function UserDashboard(props) {
 
@@ -16,9 +17,7 @@ function UserDashboard(props) {
     const [isMessageCardOpen, setMessageCardOpen] = useState(false);
     const [isAppointmentsOpen, setAppointmentsOpen] = useState(false);
 
-    const [profile ,setProfile] = useState([]);
-    const [message , setMessage] = useState([]);
-    const [appointment,setAppointment] = useState([]);
+   
 
     const openArtisanProfile = ()=>{
         setArtisanProfileOpen(true);
@@ -61,7 +60,7 @@ function UserDashboard(props) {
         <div>
             <div className="h-full w-full flex overflow-hidden antialiased text-gray-800 bg-white">
                 {/* <!-- section body side nav --> */}
-                <nav aria-label="side bar" aria-orientation="vertical"
+                <nav aria-label="side bar" 
                     className="min-h-full flex-none flex flex-col items-center text-center bg-black text-gray-400 border-r">
                     <div className="h-16 flex items-center w-full">
                         <img className="h-6 w-6 mx-auto" src={navlogo}  />
@@ -185,6 +184,7 @@ function UserDashboard(props) {
                     <RatingForm/>
                     <PaymentForm/>
                     <UserAppointments/>
+                    <Receipt/>
                     {/* {
                         (!isArtisanProfileOpen && !isMessageCardOpen && !isAppointmentsOpen) &&
                         <div>

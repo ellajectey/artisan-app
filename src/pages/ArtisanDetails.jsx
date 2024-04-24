@@ -1,126 +1,186 @@
-import React, {useEffect,useState} from 'react';
+import React, { useEffect, useState } from "react";
 // import ImageGallery from '../components/ImageGallery.jsx'
-import Navbar from '../components/Navbar.jsx'
-import Footer from '../components/Footer.jsx'
-import RatingCard from '../components/RatingCard.jsx';
-import {useParams} from 'react-router-dom'
-import axios from 'axios';
+import Navbar from "../components/Navbar.jsx";
+import Footer from "../components/Footer.jsx";
+import RatingCard from "../components/RatingCard.jsx";
+import { useLocation, useParams } from "react-router-dom";
+ 
+
 function ArtisanDetails() {
-const [artisan, setArtisan] = useState(null)
+  const location = useLocation();
 
-const Params = useParams()
-console.log('Params', Params)
+  let artisanID = null;
+  if (location.pathname.split("/")[2]) {
+    artisanID = location.pathname.split("/")[2];
+  }
+  console.log(artisanID);
 
-const url = `${process.env.REACT_APP_ARTISCHED_API}${Params._id}`
+  const [artisan, setArtisan] = useState(null);
 
-useEffect (()=>{
-    async function displayOneArtisan(){
-        try{
-            const artisans = await axios.get(url);
-            console.log("artisans",artisans[0]);
+  useEffect(() => {
+    const getArtisan = async () => {
+      let artisanList = [];
+      if (sessionStorage.getItem("artisans") !== null) {
+        artisanList = JSON.parse(sessionStorage.getItem("artisans"));
+      }
 
-            const artisansBox = artisans.data;
-            setArtisan(artisansBox[0]);
-        }catch(error){
-            console.log("error", error);
-        }
-    }
-    displayOneArtisan();
-},[Params.id])
+      let art = artisanList.find((artist) => artist._id === artisanID);
+      console.log("found art", art);
+      if (art !== null) {
+        setArtisan(art);
+      }
+    };
+    getArtisan();
+  }, []);
 
-    if(!artisan){
-        console.log(artisan);
-        return<div>Artisan not found</div>;
-    }
+  // if(!artisan){
+  //     console.log(artisan);
+  //     return<div>Artisan not found</div>;
+  // }
 
-    return (
-        <div>
-            <Navbar/>
-             
-            {/* <ImageGallery/> */}
-            <div className="bg-white dark:bg-gray-800 h-screen h-full py-6 sm:py-8 lg:py-12">
-    <div className="mx-auto max-w-screen-2xl px-4 md:px-8">
-        <div className="mb-4 flex items-center justify-between gap-8 sm:mb-8 md:mb-12">
-            <div className="flex items-center gap-12">
-                <h2 className="text-2xl font-bold text-gray-800 lg:text-3xl dark:text-white">My Work</h2>
-
-                <p className="hidden max-w-screen-sm text-gray-500 dark:text-gray-300 md:block">
-                    {artisan.summary}
-                    {/* This is a section of some simple filler text,
-                    also known as placeholder text. It shares some characteristics of a real written text. */}
-                </p>
+  return (
+    <>
+        {
+            !artisan ? 
+            <div>
+                <span>Loading Artisan...</span>
             </div>
+            : 
+            <div>
+                <Navbar />
 
-            <a href="#"
-                className="inline-block rounded-lg border bg-white dark:bg-gray-700 dark:border-none px-4 py-2 text-center text-sm font-semibold text-gray-500 dark:text-gray-200 outline-none ring-indigo-300 transition duration-100 hover:bg-gray-100 focus-visible:ring active:bg-gray-200 md:px-8 md:py-3 md:text-base">
-                More
-            </a>
+                {/*  */}
+
+                <h2 className="mt-36 ml-10 font-bold text-3xl">{artisan.firstName} {artisan.lastName}</h2>
+                <main class=" mx-20 px-4 py-8">
+    <div class="flex flex-wrap -mx-4">
+        <div class="w-full lg:w-2/3 px-4">
+            <h2 class="text-xl font-bold mb-4">{artisan.job} -- {artisan.category}</h2>
+            <p class="text-gray-700">{artisan.summary}
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris rhoncus ultrices
+                nunc, in sagittis nulla dapibus non. Sed convallis fermentum ante quis gravida. Morbi finibus lorem eu
+                eros consequat venenatis. Vestibulum at tristique neque. Fusce non sem auctor, sagittis arcu eget,
+                euismod nisl. Curabitur et bibendum sapien. Cras luctus suscipit magna ac bibendum. Vivamus eu semper
+                urna. Sed ullamcorper nisl vel dolor rhoncus facilisis. Donec vehicula nibh vitae est facilisis varius.
+            </p>
         </div>
-
-        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:gap-6 xl:gap-8">
-            {/* <!-- image - start --> */}
-            <a href="#"
-                className="group relative flex h-48 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-80">
-                <img src={artisan.images.image1} loading="lazy" alt="default by Minh Pham" className="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" />
-
-                <div
-                    className="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-50">
-                </div>
-
-                <span className="relative ml-4 mb-3 inline-block text-sm text-white md:ml-5 md:text-lg">VR</span>
-            </a>
-            {/* <!-- image - end -->
-
-            <!-- image - start --> */}
-            <a href="#"
-                className="group relative flex h-48 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:col-span-2 md:h-80">
-                <img src={artisan.images.image2}
-                loading="lazy" alt="default" className="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" />
-
-                <div
-                    className="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-50">
-                </div>
-
-                <span className="relative ml-4 mb-3 inline-block text-sm text-white md:ml-5 md:text-lg">Tech</span>
-            </a>
-            {/* <!-- image - end -->
-
-            <!-- image - start --> */}
-            <a href="#"
-                className="group relative flex h-48 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:col-span-2 md:h-80">
-                <img src= {artisan.images.image3}
-                 loading="lazy" alt="default" className="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" />
-
-                <div
-                    className="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-50">
-                </div>
-
-                <span className="relative ml-4 mb-3 inline-block text-sm text-white md:ml-5 md:text-lg">Dev</span>
-            </a>
-            {/* <!-- image - end -->
-
-            <!-- image - start --> */}
-            <a href="#"
-                className="group relative flex h-48 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-80">
-                <img src={artisan.images.image4}
-                loading="lazy" alt="default" className="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" />
-
-                <div
-                    className="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-50">
-                </div>
-
-                <span className="relative ml-4 mb-3 inline-block text-sm text-white md:ml-5 md:text-lg">Retro</span>
-            </a>
-            {/* <!-- image - end --> */}
+        <div class="w-full lg:w-1/3 px-4">
+            <h3 class="text-lg font-bold mb-4">Schedule</h3>
+            <ul class="list-disc pl-4">
+                <li>Monday - Tuesday 12:00pm to 5:00pm</li>
+                <li>Wednesday - Friday 9:00am to 5:00pm</li>
+                <li>Saturday - Sunday 10:00am to 4:00pm</li>
+            </ul>
         </div>
     </div>
-
-
-</div>
-<RatingCard/>
-            <Footer/>
-        </div>
-    );
+</main>
+                {/* <ImageGallery/> */}
+                <div className="bg-white dark:bg-gray-800  h-full py-6 sm:py-8 lg:py-12">
+                <div className="mx-auto max-w-screen-2xl px-4 md:px-8">
+                    <div className="mb-4 flex items-center justify-between gap-8 sm:mb-8 md:mb-12">
+                    <div className="flex items-center gap-12">
+                        <h2 className="text-2xl font-bold text-gray-800 lg:text-3xl dark:text-white">
+                        My Work
+                        </h2>
+        
+                        <p className="hidden max-w-screen-sm text-gray-500 dark:text-gray-300 md:block">
+                        {artisan.summary}
+                        {/* This is a section of some simple filler text,
+                            also known as placeholder text. It shares some characteristics of a real written text. */}
+                        </p>
+                    </div>
+        
+                    <a
+                        href="#"
+                        className="inline-block rounded-lg border border-orange-400 bg-white  px-4 py-2 text-center text-sm font-semibold text-gray-500 dark:text-gray-200 outline-none ring-indigo-300 transition duration-100 hover:bg-gray-100 focus-visible:ring active:bg-gray-200 md:px-8 md:py-3 md:text-base"
+                    >
+                        View More
+                    </a>
+                    </div>
+        
+                    <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:gap-6 xl:gap-8">
+                    {/* <!-- image - start --> */}
+                    <a
+                        href="#"
+                        className="group relative flex h-48 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-80"
+                    >
+                        <img
+                        src={artisan.images.image1}
+                        loading="lazy"
+                        alt="default by Minh Pham"
+                        className="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110"
+                        />
+        
+                        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-50"></div>
+        
+                        
+                    </a>
+                    {/* <!-- image - end -->
+        
+                    <!-- image - start --> */}
+                    <a
+                        href="#"
+                        className="group relative flex h-48 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:col-span-2 md:h-80"
+                    >
+                        <img
+                        src={artisan.images.image2}
+                        loading="lazy"
+                        alt="default"
+                        className="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110"
+                        />
+        
+                        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-50"></div>
+        
+                        
+                    </a>
+                    {/* <!-- image - end -->
+        
+                    <!-- image - start --> */}
+                    <a
+                        href="#"
+                        className="group relative flex h-48 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:col-span-2 md:h-80"
+                    >
+                        <img
+                        src={artisan.images.image3}
+                        loading="lazy"
+                        alt="default"
+                        className="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110"
+                        />
+        
+                        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-50"></div>
+        
+                        {/* <span className="relative ml-4 mb-3 inline-block text-sm text-white md:ml-5 md:text-lg">
+                        Dev
+                        </span> */}
+                    </a>
+                    {/* <!-- image - end -->
+        
+                    <!-- image - start --> */}
+                    <a
+                        href="#"
+                        className="group relative flex h-48 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-80"
+                    >
+                        <img
+                        src={artisan.images.image4}
+                        loading="lazy"
+                        alt="default"
+                        className="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110"
+                        />
+        
+                        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-gray-800 via-transparent to-transparent opacity-50"></div>
+        
+                       
+                    </a>
+                    {/* <!-- image - end --> */}
+                    </div>
+                </div>
+                </div>
+                <RatingCard />
+                <Footer />
+            </div>
+        }
+    </>
+  );
 }
 
 export default ArtisanDetails;
