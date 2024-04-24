@@ -1,10 +1,32 @@
-import React from 'react';
+import React, {useEffect,useState} from 'react';
 // import ImageGallery from '../components/ImageGallery.jsx'
 import Navbar from '../components/Navbar.jsx'
 import Footer from '../components/Footer.jsx'
 import RatingCard from '../components/RatingCard.jsx';
+import {useParams} from 'react-router-dom'
+import axios from 'axios';
+function ArtisanDetails() {
+const [artisan, setArtisan] = useState(null)
 
-function ArtisanDetails({artisan}) {
+const Params = useParams()
+console.log('Params', Params)
+
+const url = `${process.env.REACT_APP_ARTISCHED_API}${Params._id}`
+
+useEffect (()=>{
+    async function displayOneArtisan(){
+        try{
+            const artisans = await axios.get(url);
+            console.log("artisans",artisans[0]);
+
+            const artisansBox = artisans.data;
+            setArtisan(artisansBox[0]);
+        }catch(error){
+            console.log("error", error);
+        }
+    }
+    displayOneArtisan();
+},[Params.id])
 
     if(!artisan){
         console.log(artisan);
