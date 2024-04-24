@@ -1,4 +1,5 @@
 import React from "react";
+import ImageGallery from '../components/ImageGallery.jsx'
 
 function ArtisanProfile(props) {
   return (
@@ -101,6 +102,7 @@ function ArtisanProfile(props) {
           </div>
         </div>
       </section>
+      <ImageGallery/>
     </div>
   );
 }

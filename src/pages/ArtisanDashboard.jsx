@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 import navlogo from "../assets/artisched-green.png";
 import MessageCard from "../components/MessageCard";
 import ArtisanProfile from "../components/ArtisanProfile";
-import ImageGallery from '../components/ImageGallery';
 import Appointments from '../components/Appointments';
 import { useLocation } from 'react-router-dom';
 
@@ -13,10 +12,16 @@ function ArtisanDashboard(props) {
 
     const [isArtisanProfileOpen, setArtisanProfileOpen] = useState(false);
     const [isMessageCardOpen, setMessageCardOpen] = useState(false);
+    const [isAppointmentsOpen, setAppointmentsOpen] = useState(false);
+
+    const [profile ,setProfile] = useState([]);
+    const [message , setMessage] = useState([]);
+    const [appointment,setAppointment] = useState([]);
 
     const openArtisanProfile = ()=>{
         setArtisanProfileOpen(true);
         setMessageCardOpen(false);
+        setAppointmentsOpen(false);
     };
 
     const closeArtisanProfile = () =>{
@@ -26,6 +31,8 @@ function ArtisanDashboard(props) {
     const hideModals = () => {
         setArtisanProfileOpen(false);
         setMessageCardOpen(false);
+        setAppointmentsOpen(false);
+
     }
 
     const closeMessageCard =() =>{
@@ -34,8 +41,19 @@ function ArtisanDashboard(props) {
 
     const openMessageCard = () => {
         setMessageCardOpen(true);
+        setAppointmentsOpen(false);
         setArtisanProfileOpen(false);
     }
+
+    const closeAppointments =() =>{
+        setAppointmentsOpen(false);
+    }
+    const openAppointments =() => {
+
+            setAppointmentsOpen(true);
+            setMessageCardOpen(false);
+            setArtisanProfileOpen(false);
+        }
 
     return (
         <div>
@@ -60,9 +78,9 @@ function ArtisanDashboard(props) {
                             </a>
                         </li>
                         <li>
-                            <a title="Inbox" href="#messageCard" className="h-16 px-6 flex items-center hover:text-white w-full"
+                            <a title="Inbox" href="#inbox" className="h-16 px-6 flex items-center hover:text-white w-full"
                             
-                            onClick={()=>openMessageCard}>
+                            onClick={()=>openMessageCard()}>
                                 <i className="mx-auto">
                                     <svg className="fill-current h-5 w-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                                         <path d="M18.546 3h-13.069l-5.477 8.986v9.014h24v-9.014l-5.454-8.986zm-3.796 12h-5.5l-2.25-3h-4.666l4.266-7h10.82l4.249 7h-4.669l-2.25 3zm-9.75-4l.607-1h12.787l.606 1h-14zm12.18-3l.607 1h-11.573l.607-1h10.359zm-1.214-2l.606 1h-9.144l.607-1h7.931z" />
@@ -71,7 +89,7 @@ function ArtisanDashboard(props) {
                             </a>
                         </li>
                         <li>
-                            <a title="Profile" href="#customer-lists"
+                            <a title="Profile" href="#profile"
                                 className="h-16 px-6 flex items-center hover:text-white w-full"
                                 onClick ={()=>openArtisanProfile()}>
                                 <i className="mx-auto">
@@ -82,7 +100,8 @@ function ArtisanDashboard(props) {
                             </a>
                         </li>
                         <li>
-                            <a title="Booking" href="#reporting" className="h-16 px-6 flex items-center hover:text-white w-full">
+                            <a title="Appointments" href="#appointments" className="h-16 px-6 flex items-center hover:text-white w-full"
+                            onClick ={()=> openAppointments()}>
                                 <i className="mx-auto">
                                     <svg className="fill-current h-5 w-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                                         <path d="M5 19h-4v-4h4v4zm6 0h-4v-8h4v8zm6 0h-4v-13h4v13zm6 0h-4v-19h4v19zm1 2h-24v2h24v-2z" />
@@ -102,7 +121,7 @@ function ArtisanDashboard(props) {
                     </ul>
 
                     <div className="mt-auto h-16 flex items-center w-full">
-                        <img style={{filter: "invert(85%)"}} className="h-8 w-10 mx-auto" src="https://raw.githubusercontent.com/bluebrown/tailwind-zendesk-clone/master/public/assets/chi.png" />
+                    <i class="fa-solid fa-right-from-bracket text-gray-400 text-center text-xl w-24 h-24 py-8"></i>
                     </div>
                 </nav>
 
@@ -144,12 +163,40 @@ function ArtisanDashboard(props) {
                     {/* 
                         <!-- section body header --> */}
                     <header aria-label="page caption" className="flex-none flex h-16 bg-gray-100 border-t px-4 items-center">
-                        <h1 id="page-caption" className="font-semibold text-lg">Artisan Dashboard</h1>
+                        <h1 id="page-caption" className="font-semibold text-lg">ArtisanName, Welcome to Your Dashboard</h1>
                     </header>
-                    <ArtisanProfile/>
-                    <Appointments/>
-                    <ImageGallery/>
-                    <MessageCard/>
+                    {/* Other Content */}
+                    {(isArtisanProfileOpen|| location.hash === '#profile') && ( 
+                    <ArtisanProfile isOpen={isArtisanProfileOpen} onClose={closeArtisanProfile}/>
+
+                    )}
+
+                    {(isMessageCardOpen|| location.hash === '#inbox') && ( 
+                    <MessageCard isOpen={isMessageCardOpen} onClose={closeMessageCard}/>
+
+                    )}
+
+                    {(isAppointmentsOpen|| location.hash === '#booking') && ( 
+                    <Appointments isOpen={isAppointmentsOpen} onClose={closeAppointments}/>
+
+                    )}
+                    
+                    {/* {
+                        (!isArtisanProfileOpen && !isMessageCardOpen && !isAppointmentsOpen) &&
+                        <div>
+                            <h2>Your Profile</h2>
+                            {
+                                profile.map((profile, index)=> {  
+                                    return (
+                                        <div key ={index} className ="row" style={{marginBottom: '10px'}}>
+                                            {index + 1}.{profile.title}
+                                            </div>
+                                    )
+                                })
+                            }
+                        </div>
+                    } */}
+                    
             </div>
         </div>
         </div>
