@@ -85,7 +85,7 @@ function Registration() {
         </div>
 
         <div className="mt-8 sm:mx-auto sm:w-auto">
-          <div className=" w-auto bg-black py-8 px-4 shadow sm:rounded-lg sm:px-10 bg-blur bg-black-200 bg-opacity-50 p-6 rounded-lg shadow-lg">
+          <div className=" w-auto bg-black py-8 px-4 shadow sm:rounded-lg sm:px-10 bg-blur bg-black-200 bg-opacity-60 p-6 rounded-lg shadow-lg">
             <Formik
               initialValues={initialValues}
               validationSchema={validationSchema}
@@ -230,7 +230,7 @@ function Registration() {
                         <button
                           type="submit"
                           disabled={!formik.isValid}
-                          className=" ml-6 w-80 py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-orange-500 hover:bg-orange-800 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition duration-150 ease-in-out"
+                          className=" ml-4 w-80 py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-orange-500 hover:bg-orange-800 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition duration-150 ease-in-out"
                         >
                           Register
                         </button>
@@ -240,7 +240,7 @@ function Registration() {
                         <br />
                         <Link
                           to="/login"
-                          className="text-sm text-blue-300 hover:text-blue-500 focus:outline-none focus:underline transition ease-in-out duration-150"
+                          className="text-sm text-yellow-500 hover:text-orange-500 focus:outline-none focus:underline transition ease-in-out duration-150"
                         >
                           login to your account
                         </Link>

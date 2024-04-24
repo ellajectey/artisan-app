@@ -4,7 +4,9 @@ import MessageCard from "../components/MessageCard";
 import ArtisanProfile from "../components/ArtisanProfile";
 import Appointments from '../components/Appointments';
 import { useLocation } from 'react-router-dom';
-
+import RatingForm from '../components/RatingForm';
+import PaymentForm from '../components/PaymentForm';
+import UserAppointments from '../components/UserAppointments';
 
 function UserDashboard(props) {
 
@@ -180,7 +182,9 @@ function UserDashboard(props) {
                     <Appointments isOpen={isAppointmentsOpen} onClose={closeAppointments}/>
 
                     )}
-                    
+                    <RatingForm/>
+                    <PaymentForm/>
+                    <UserAppointments/>
                     {/* {
                         (!isArtisanProfileOpen && !isMessageCardOpen && !isAppointmentsOpen) &&
                         <div>

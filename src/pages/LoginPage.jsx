@@ -86,7 +86,7 @@ function LoginPage() {
         </div>
 
         <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md ">
-          <div className="bg-black py-8 px-4 shadow sm:rounded-lg sm:px-10 bg-blur bg-black-200 bg-opacity-50 p-6 rounded-lg shadow-lg">
+          <div className="bg-black py-8 px-4 shadow sm:rounded-lg sm:px-10 bg-blur bg-black-200 bg-opacity-60 p-6 rounded-lg shadow-lg">
             <Formik
               initialValues={initialValues}
               validationSchema={validationSchema}
@@ -171,9 +171,9 @@ function LoginPage() {
                         <br />
                         <Link
                           to="/register"
-                          className="text-sm text-blue-300 hover:text-blue-500 focus:outline-none focus:underline transition ease-in-out duration-150"
+                          className="text-sm text-yellow-500 hover:text-orange-500 focus:outline-none focus:underline transition ease-in-out duration-150"
                         >
-                          create a new acccount
+                          create a new account
                         </Link>
                       </p>
                     </div>

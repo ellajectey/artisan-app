@@ -1,4 +1,5 @@
 import React from 'react';
+import RatingCard from './RatingCard';
 
 function UserProfile(props) {
     return (

@@ -18,7 +18,7 @@ const router = createBrowserRouter([
   { path: "/register", element: <Registration/> },
   { path: "/search", element: <Search/> },
   { path: "/inbox", element: <Inbox/> },
-  { path: "/artisanDetails", element: <ArtisanDetails/> },
+  { path: "/artisanDetails/:id", element: <ArtisanDetails/> },
   { path: "/artisan-dashboard", element: <ArtisanDashboard/> },
   { path: "/appointment", element: <Appointment/> },
   { path: "/user-dashboard", element: <UserDashboard/> },

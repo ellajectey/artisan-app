@@ -32,7 +32,7 @@ function RatingForm() {
         <label for="message" className="block mb-1">Message</label>
         <textarea id="message" className="w-full py-2 px-4 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
     </div>
-    <button type="submit" className="py-2 px-4 bg-blue-500 text-white rounded hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500">Submit</button>
+    <button type="submit" className="py-2 px-4 bg-orange-500 text-white rounded hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-orange-900">Submit</button>
 </form>
         </div>
     );

@@ -14,9 +14,9 @@ function ArtisanDashboard(props) {
     const [isMessageCardOpen, setMessageCardOpen] = useState(false);
     const [isAppointmentsOpen, setAppointmentsOpen] = useState(false);
 
-    const [profile ,setProfile] = useState([]);
-    const [message , setMessage] = useState([]);
-    const [appointment,setAppointment] = useState([]);
+    // const [profile ,setProfile] = useState([]);
+    // const [message , setMessage] = useState([]);
+    // const [appointment,setAppointment] = useState([]);
 
     const openArtisanProfile = ()=>{
         setArtisanProfileOpen(true);
