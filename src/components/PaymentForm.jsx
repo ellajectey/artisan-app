@@ -6,7 +6,7 @@ function PaymentForm(props) {
             
             <div class="w-full max-w-lg mx-auto p-8">
     <div class="bg-white rounded-lg shadow-lg p-6">
-        <h2 class="text-lg font-medium mb-6">Payment Information</h2>
+        <h2 class="text-lg font-medium mb-6">Pay Deposit Fee</h2>
         <form>
             <div class="grid grid-cols-2 gap-6">
                 <div class="col-span-2 sm:col-span-1">

@@ -5,7 +5,7 @@ function Receipt() {
     <div>
       <div className="max-w-xs mx-auto bg-white rounded-lg shadow-md overflow-hidden mt-24">
         <div className="bg-gray-100 px-4 py-2">
-          <h2 className="text-lg font-medium text-gray-800">Credit Card</h2>
+          <h2 className="text-lg font-medium text-gray-800">Booking Receipt</h2>
         </div>
         <div className="px-4 py-5 sm:p-6">
           <div className="flex flex-col items-start justify-between mb-6">
@@ -37,15 +37,15 @@ function Receipt() {
           <div className="flex flex-row items-center justify-between">
             <div className="flex flex-col items-start">
               <span className="text-sm font-medium text-gray-600">
-                Credit Limit
+                Reference
               </span>
-              <span className="text-lg font-medium text-gray-800">$10,000</span>
+              <span className="text-lg font-medium text-gray-800">Booking Deposit</span>
             </div>
             <div className="flex flex-col items-start">
               <span className="text-sm font-medium text-gray-600">
-                Available Balance
+                Amount
               </span>
-              <span className="text-lg font-medium text-gray-800">$7,500</span>
+              <span className="text-lg font-medium text-gray-800">₵100.00</span>
             </div>
           </div>
         </div>

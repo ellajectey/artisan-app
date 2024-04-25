@@ -8,6 +8,10 @@ import RatingForm from '../components/RatingForm';
 import PaymentForm from '../components/PaymentForm';
 import UserAppointments from '../components/UserAppointments';
 import Receipt from '../components/Receipt';
+import flatpickr from "flatpickr";
+import "flatpickr/dist/flatpickr.min.css";
+import DatePic from '../components/DatePic';
+
 
 function UserDashboard(props) {
 
@@ -178,28 +182,15 @@ function UserDashboard(props) {
                     )}
 
                     {(isAppointmentsOpen|| location.hash === '#booking') && ( 
-                    <Appointments isOpen={isAppointmentsOpen} onClose={closeAppointments}/>
+                    <UserAppointments isOpen={isAppointmentsOpen} onClose={closeAppointments}/>
 
                     )}
                     <RatingForm/>
                     <PaymentForm/>
                     <UserAppointments/>
                     <Receipt/>
-                    {/* {
-                        (!isArtisanProfileOpen && !isMessageCardOpen && !isAppointmentsOpen) &&
-                        <div>
-                            <h2>Your Profile</h2>
-                            {
-                                profile.map((profile, index)=> {  
-                                    return (
-                                        <div key ={index} className ="row" style={{marginBottom: '10px'}}>
-                                            {index + 1}.{profile.title}
-                                            </div>
-                                    )
-                                })
-                            }
-                        </div>
-                    } */}
+                    <div className='flex inline-block'><DatePic/><DatePic/></div>
+                    
                     
             </div>
         </div>
