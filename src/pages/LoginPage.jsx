@@ -7,7 +7,6 @@ import { useNavigate } from "react-router-dom";
 import FormikControl from "./formAuth/FormikControl";
 import { Link } from "react-router-dom";
 
-
 function LoginPage() {
 
     const radioOptions = [
@@ -56,7 +55,7 @@ function LoginPage() {
           sessionStorage.setItem('user', JSON.stringify(responseData));
           if (token)
           {
-            
+            sessionStorage.setItem('user_email', values.email);
             if(body.type === "client"){
               navigate("/user-dashboard");
             }

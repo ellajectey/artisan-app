@@ -62,7 +62,7 @@ function UserDashboard(props) {
                 <nav aria-label="side bar" 
                     className="min-h-full flex-none flex flex-col items-center text-center bg-black text-gray-400 border-r">
                     <div className="h-16 flex items-center w-full">
-                        <img className="h-6 w-6 mx-auto" src={navlogo}  />
+                        <img className="h-6 w-6 mx-auto" src={navlogo} alt='navlogo' />
                     </div>
 
                     <ul>
@@ -121,20 +121,20 @@ function UserDashboard(props) {
                     </ul>
 
                     <div className="mt-auto h-16 flex items-center w-full">
-                    <i class="fa-solid fa-right-from-bracket text-gray-400 text-center text-xl w-24 h-24 py-8"></i>
+                    <i className="fa-solid fa-right-from-bracket text-gray-400 text-center text-xl w-24 h-24 py-8"></i>
                     </div>
                 </nav>
 
                 <div className="flex-1 flex flex-col">
                     {/* <!-- section body top nav --> */}
-                    <nav aria-label="top bar" className="flex-none flex justify-between bg-white h-16">
+                    <nav className="flex-none flex justify-between bg-white h-16">
 
                         {/* <!-- top bar left --> */}
-                        <ul aria-label="top bar left" aria-orientation="horizontal" className="flex">
+                        <ul className="flex">
                         </ul>
 
                         {/* <!-- to bar right  --> */}
-                        <ul aria-label="top bar right" aria-orientation="horizontal" className="px-8 flex items-center">
+                        <ul className="px-8 flex items-center">
                             <li className="relative">
                                 <input title="Search Bar" aria-label="search bar" role="search" className="pr-8 pl-4 py-2 rounded-md cursor-pointer transition-all duration-300 ease-in-out focus:border-black focus:cursor-text w-4 focus:w-64 placeholder-transparent focus:placeholder-gray-500" type="text" placeholder="Search Dashboard" />
                                 <i className="pointer-events-none absolute top-0 right-0 h-full flex items-center pr-3">
@@ -155,7 +155,7 @@ function UserDashboard(props) {
 
                             <li className="h-10 w-10 ml-3">
                                 <button title="Page Menu" aria-label="page menu" className="h-full w-full rounded-full border focus:outline-none focus:shadow-outline">
-                                    <img className="h-full w-full rounded-full mx-auto" src="https://raw.githubusercontent.com/bluebrown/tailwind-zendesk-clone/master/public/assets/me.jpg" />
+                                    <img className="h-full w-full rounded-full mx-auto" alt='me' src="https://raw.githubusercontent.com/bluebrown/tailwind-zendesk-clone/master/public/assets/me.jpg" />
                                 </button>
                             </li>
                         </ul>

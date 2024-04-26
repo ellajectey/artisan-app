@@ -7,13 +7,14 @@ import { useLocation, useParams } from "react-router-dom";
 import header from "../assets/artisan-header.png";
 
 function ArtisanDetails() {
-  const location = useLocation();
+  let pars = useParams();
 
   let artisanID = null;
-  if (location.pathname.split("/")[2]) {
-    artisanID = location.pathname.split("/")[2];
+  if (pars.id) {
+    // console.log(pars);
+    artisanID = pars.id;// location.pathname.split("/")[2];
   }
-  console.log(artisanID);
+//   console.log(artisanID);
 
   const [artisan, setArtisan] = useState(null);
 
@@ -25,7 +26,7 @@ function ArtisanDetails() {
       }
 
       let art = artisanList.find((artist) => artist._id === artisanID);
-      console.log("found art", art);
+    //   console.log("found art", art);
       if (art !== null) {
         setArtisan(art);
       }
@@ -57,21 +58,21 @@ function ArtisanDetails() {
               {artisan.firstName} {artisan.lastName}
             </h2>
 
-            <h2 class="  font-semi-bold text-orange-700 text-3xl ml-10 mt-36">
+            <h2 className="  font-semi-bold text-orange-700 text-3xl ml-10 mt-36">
               ⩥{artisan.location}
             </h2>
           </div>
-          <main class=" mx-20 px-4 py-8">
-            <div class="flex flex-wrap -mx-4">
-              <div class="w-full lg:w-2/3 px-4">
-                <h2 class="text-xl font-bold mb-4">
+          <main className=" mx-20 px-4 py-8">
+            <div className="flex flex-wrap -mx-4">
+              <div className="w-full lg:w-2/3 px-4">
+                <h2 className="text-xl font-bold mb-4">
                   {artisan.job} -- {artisan.category}
                 </h2>
 
                 {artisan.summary ? (
-                  <p class="text-gray-700">{artisan.summary}</p>
+                  <p className="text-gray-700">{artisan.summary}</p>
                 ) : (
-                  <p class="text-gray-700">
+                  <p className="text-gray-700">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Mauris rhoncus ultrices nunc, in sagittis nulla dapibus non.
                     Sed convallis fermentum ante quis gravida. Morbi finibus
@@ -100,9 +101,9 @@ function ArtisanDetails() {
         />
       )} */}
               </div>
-              <div class="w-full lg:w-1/3 px-4">
-                <h3 class="text-lg font-bold mb-4">Schedule</h3>
-                <ul class="list-disc pl-4">
+              <div className="w-full lg:w-1/3 px-4">
+                <h3 className="text-lg font-bold mb-4">Schedule</h3>
+                <ul className="list-disc pl-4">
                   <li>Monday - Tuesday 12:00pm to 5:00pm</li>
                   <li>Wednesday - Friday 9:00am to 5:00pm</li>
                   <li>Saturday - Sunday 10:00am to 4:00pm</li>

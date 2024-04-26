@@ -6,7 +6,8 @@ import ArtisanDashboard from "./pages/ArtisanDashboard"
 import UserDashboard from "./pages/UserDashboard"
 import Search from "./pages/Search";
 import ArtisanDetails from "./pages/ArtisanDetails"
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
@@ -24,8 +25,8 @@ const router = createBrowserRouter([
 function App() {
   return (
     <div className="App">
-      
       <RouterProvider router={router}/>
+      <ToastContainer />
     </div>
   );
 }

@@ -121,7 +121,7 @@ function ArtisanDashboard(props) {
                     </ul>
 
                     <div className="mt-auto h-16 flex items-center w-full">
-                    <i class="fa-solid fa-right-from-bracket text-gray-400 text-center text-xl w-24 h-24 py-8"></i>
+                    <i className="fa-solid fa-right-from-bracket text-gray-400 text-center text-xl w-24 h-24 py-8"></i>
                     </div>
                 </nav>
 

@@ -1,5 +1,4 @@
 import React from "react";
-import Calendar from "./Calendar";
 import BookingCard from "./BookingCard";
 import AppCard from "./AppCard";
 
