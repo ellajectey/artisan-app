@@ -1,14 +1,11 @@
 import React, {useState} from 'react';
 import navlogo from "../assets/artisched-green.png";
 import MessageCard from "../components/MessageCard";
-import ArtisanProfile from "../components/ArtisanProfile";
-import Appointments from '../components/Appointments';
 import { useLocation } from 'react-router-dom';
-import RatingForm from '../components/RatingForm';
-import PaymentForm from '../components/PaymentForm';
+import UserProfile from '../components/UserProfile';
 import UserAppointments from '../components/UserAppointments';
-import Receipt from '../components/Receipt';
-import DatePic from '../components/DatePic';
+
+
 
 
 function UserDashboard(props) {
@@ -60,7 +57,7 @@ function UserDashboard(props) {
 
     return (
         <div>
-            <div className="h-full w-full flex overflow-hidden antialiased text-gray-800 bg-white">
+            <div className="min-h-full w-full flex overflow-hidden antialiased text-gray-800 bg-white bg-cover bg-[url('./assets/basket-pattern.jpg')]">
                 {/* <!-- section body side nav --> */}
                 <nav aria-label="side bar" 
                     className="min-h-full flex-none flex flex-col items-center text-center bg-black text-gray-400 border-r">
@@ -170,7 +167,7 @@ function UserDashboard(props) {
                     </header>
                     {/* Other Content */}
                     {(isArtisanProfileOpen|| location.hash === '#profile') && ( 
-                    <ArtisanProfile isOpen={isArtisanProfileOpen} onClose={closeArtisanProfile}/>
+                    <UserProfile isOpen={isArtisanProfileOpen} onClose={closeArtisanProfile}/>
 
                     )}
 
@@ -183,9 +180,9 @@ function UserDashboard(props) {
                     <UserAppointments isOpen={isAppointmentsOpen} onClose={closeAppointments}/>
 
                     )}
-                    <RatingForm/>
-                    <PaymentForm/>
-                    <UserAppointments/>
+                    
+                  
+                   
                            
             </div>
         </div>
