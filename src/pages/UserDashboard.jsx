@@ -8,8 +8,6 @@ import RatingForm from '../components/RatingForm';
 import PaymentForm from '../components/PaymentForm';
 import UserAppointments from '../components/UserAppointments';
 import Receipt from '../components/Receipt';
-import flatpickr from "flatpickr";
-import "flatpickr/dist/flatpickr.min.css";
 import DatePic from '../components/DatePic';
 
 
@@ -188,8 +186,7 @@ function UserDashboard(props) {
                     <RatingForm/>
                     <PaymentForm/>
                     <UserAppointments/>
-                    <Receipt/>
-                    <div className='flex inline-block'><DatePic/><DatePic/></div>
+                  
                     
                     
             </div>
