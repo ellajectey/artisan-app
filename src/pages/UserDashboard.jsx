@@ -186,9 +186,7 @@ function UserDashboard(props) {
                     <RatingForm/>
                     <PaymentForm/>
                     <UserAppointments/>
-                  
-                    
-                    
+                           
             </div>
         </div>
         </div>
