@@ -57,7 +57,7 @@ function ArtisanDashboard(props) {
 
     return (
         <div>
-            <div className="h-full w-full flex overflow-hidden antialiased text-gray-800 bg-white">
+            <div className="min-h-screen w-full flex overflow-hidden antialiased text-gray-800 bg-white bg-cover bg-[url('./assets/basket-pattern.jpg')]">
                 {/* <!-- section body side nav --> */}
                 <nav aria-label="side bar" aria-orientation="vertical"
                     className="min-h-full flex-none flex flex-col items-center text-center bg-black text-gray-400 border-r">

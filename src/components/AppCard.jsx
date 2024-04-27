@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-function AppCard() {
+function AppCard({refreshAppointments}) {
 
     const [artisanEmail, setArtisanEmail] = useState('');
     const [description, setDescription] = useState('');
@@ -25,6 +25,8 @@ function AppCard() {
 
         let body = {
             artisanId: theArtisan._id,
+            artisanName: theArtisan.firstName + ' ' + theArtisan.lastName,
+            artisanEmail: theArtisan.email,
             email: sessionStorage.getItem('user_email'),
             selectedDate: serviceDate,
             selectedTime: serviceTime,
@@ -41,6 +43,14 @@ function AppCard() {
         sessionStorage.setItem('appointments', JSON.stringify(appointments));
         // 
 
+        refreshAppointments();
+        clearFields();
+    }
+
+    function clearFields(){
+        setArtisanEmail('');
+        setDescription('');
+        setServiceType('');
     }
     
   return (
@@ -53,7 +63,7 @@ function AppCard() {
           <div className="mb-4">
             <label
               className="block text-gray-700 font-semibold mb-2"
-              for="name"
+              htmlFor="name"
             >
               Artisan
             </label>
@@ -61,6 +71,7 @@ function AppCard() {
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="name"
               type="text"
+              value={artisanEmail}
               onChange={(e) => setArtisanEmail(e.target.value)}
               placeholder="Enter Artisan's email"
             />
@@ -69,7 +80,7 @@ function AppCard() {
           <div className="mb-4">
             <label
               className="block text-gray-700 font-semibold mb-2"
-              for="date"
+              htmlFor="date"
             >
               Date
             </label>
@@ -84,7 +95,7 @@ function AppCard() {
           <div className="mb-4">
             <label
               className="block text-gray-700 font-semibold mb-2"
-              for="time"
+              htmlFor="time"
             >
               Select Available Time
             </label>
@@ -99,7 +110,7 @@ function AppCard() {
           <div className="mb-4">
             <label
               className="block text-gray-700 font-semibold mb-2"
-              for="service"
+              htmlFor="service"
             >
               Service
             </label>
@@ -108,6 +119,7 @@ function AppCard() {
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="name"
               type="text"
+              value={serviceType}
               onChange={(e) => setServiceType(e.target.value)}
               placeholder="Service Needed"
             />
@@ -127,7 +139,7 @@ function AppCard() {
           <div className="mb-4">
             <label
               className="block text-gray-700 font-semibold mb-2"
-              for="message"
+              htmlFor="message"
             >
               Message
             </label>
@@ -135,6 +147,7 @@ function AppCard() {
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="message"
               rows="4"
+              value={description}
               onChange={(e) => setDescription(e.target.value)}
               placeholder="Enter any additional information"
             ></textarea>
@@ -143,7 +156,7 @@ function AppCard() {
           <div className="grid grid-cols-2 gap-6">
               <div className="col-span-2 sm:col-span-1">
                 <label
-                  for="card-number"
+                  htmlFor="card-number"
                   className="block text-sm font-medium text-gray-700 mb-2"
                 >
                   Card Number
@@ -158,7 +171,7 @@ function AppCard() {
               </div>
               <div className="col-span-2 sm:col-span-1">
                 <label
-                  for="expiration-date"
+                  htmlFor="expiration-date"
                   className="block text-sm font-medium text-gray-700 mb-2"
                 >
                   Expiration Date
@@ -173,7 +186,7 @@ function AppCard() {
               </div>
               <div className="col-span-2 sm:col-span-1">
                 <label
-                  for="cvv"
+                  htmlFor="cvv"
                   className="block text-sm font-medium text-gray-700 mb-2"
                 >
                   CVV
@@ -188,7 +201,7 @@ function AppCard() {
               </div>
               <div className="col-span-2 sm:col-span-1">
                 <label
-                  for="card-holder"
+                  htmlFor="card-holder"
                   className="block text-sm font-medium text-gray-700 mb-2"
                 >
                   Card Holder

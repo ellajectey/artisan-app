@@ -57,7 +57,7 @@ function UserDashboard(props) {
 
     return (
         <div>
-            <div className="min-h-full w-full flex overflow-hidden antialiased text-gray-800 bg-white bg-cover bg-[url('./assets/basket-pattern.jpg')]">
+            <div className="min-h-screen w-full flex overflow-hidden antialiased text-gray-800 bg-white bg-cover bg-[url('./assets/basket-pattern.jpg')]">
                 {/* <!-- section body side nav --> */}
                 <nav aria-label="side bar" 
                     className="min-h-full flex-none flex flex-col items-center text-center bg-black text-gray-400 border-r">
@@ -163,7 +163,7 @@ function UserDashboard(props) {
                     {/* 
                         <!-- section body header --> */}
                     <header aria-label="page caption" className="flex-none flex h-16 bg-gray-100 border-t px-4 items-center">
-                        <h1 id="page-caption" className="font-semibold text-lg">UserName, Welcome to Your Dashboard</h1>
+                        <h1 id="page-caption" className="font-semibold text-lg">{sessionStorage.getItem('user') && JSON.parse(sessionStorage.getItem('user')).firstName}, Welcome to Your Dashboard</h1>
                     </header>
                     {/* Other Content */}
                     {(isArtisanProfileOpen|| location.hash === '#profile') && ( 

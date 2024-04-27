@@ -25,6 +25,11 @@ function RatingForm() {
         }
 
         console.log('rating form body: ', body);
+        
+        setArtisanEmail('');
+        setDescription('');
+        setRating(null);
+        document.getElementById('rating'+body.rating).checked = false;
     }
     
   return (
@@ -33,8 +38,8 @@ function RatingForm() {
         <h2 className="text-2xl font-bold mb-4">Feedback Form</h2>
         
         <div className="mb-4">
-          <label for="name" className="block mb-1">Artisan Email</label>
-          <input onChange={(e) => setArtisanEmail(e.target.value)} type="text" id="name" className="w-full py-2 px-4 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"/>
+          <label htmlFor="name" className="block mb-1">Artisan Email</label>
+          <input onChange={(e) => setArtisanEmail(e.target.value)} value={artisanEmail} type="text" id="name" className="w-full py-2 px-4 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"/>
         </div>
         <div className="mb-4">
           <label className="block mb-1">Rating</label>
@@ -47,7 +52,7 @@ function RatingForm() {
               value="1"
               className="focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
-            <label for="rating1">1</label>
+            <label htmlFor="rating1">1</label>
             <input
               type="radio"
               name="rating"
@@ -56,7 +61,7 @@ function RatingForm() {
               value="2"
               className="focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
-            <label for="rating2">2</label>
+            <label htmlFor="rating2">2</label>
             <input
               type="radio"
               name="rating"
@@ -65,7 +70,7 @@ function RatingForm() {
               value="3"
               className="focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
-            <label for="rating3">3</label>
+            <label htmlFor="rating3">3</label>
             <input
               type="radio"
               name="rating"
@@ -74,7 +79,7 @@ function RatingForm() {
               value="4"
               className="focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
-            <label for="rating4">4</label>
+            <label htmlFor="rating4">4</label>
             <input
               type="radio"
               name="rating"
@@ -83,16 +88,17 @@ function RatingForm() {
               value="5"
               className="focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
-            <label for="rating5">5</label>
+            <label htmlFor="rating5">5</label>
           </div>
         </div>
         <div className="mb-4">
-          <label for="message" className="block mb-1">
+          <label htmlFor="message" className="block mb-1">
             Message
           </label>
           <textarea
             id="message"
             onChange={(e) => setDescription(e.target.value)}
+            value={description}
             className="w-full py-2 px-4 rounded border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
           ></textarea>
         </div>

@@ -10,7 +10,7 @@ function PaymentForm(props) {
             <div className="grid grid-cols-2 gap-6">
               <div className="col-span-2 sm:col-span-1">
                 <label
-                  for="card-number"
+                  htmlFor="card-number"
                   className="block text-sm font-medium text-gray-700 mb-2"
                 >
                   Card Number
@@ -25,7 +25,7 @@ function PaymentForm(props) {
               </div>
               <div className="col-span-2 sm:col-span-1">
                 <label
-                  for="expiration-date"
+                  htmlFor="expiration-date"
                   className="block text-sm font-medium text-gray-700 mb-2"
                 >
                   Expiration Date
@@ -40,7 +40,7 @@ function PaymentForm(props) {
               </div>
               <div className="col-span-2 sm:col-span-1">
                 <label
-                  for="cvv"
+                  htmlFor="cvv"
                   className="block text-sm font-medium text-gray-700 mb-2"
                 >
                   CVV
@@ -55,7 +55,7 @@ function PaymentForm(props) {
               </div>
               <div className="col-span-2 sm:col-span-1">
                 <label
-                  for="card-holder"
+                  htmlFor="card-holder"
                   className="block text-sm font-medium text-gray-700 mb-2"
                 >
                   Card Holder
