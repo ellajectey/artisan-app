@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function Hero() {
   return (
     <div>
-      <div className="bg-cover min-h-screen w-full bg-[url('./assets/newbg.jpg')]">
+      <div className="bg-cover min-h-screen w-full bg-[url('./assets/newbg.webp')]">
         <div className="py-80 min-h-screen bg-black bg-opacity-30">
           <h1 className="text-center font-bold text-white text-5xl">
             Artisan Scheduler

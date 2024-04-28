@@ -75,7 +75,7 @@ function LoginPage() {
       
 
     return (
-        <div className="bg-cover bg-[url('./assets/newbg.jpg')]">
+        <div className="bg-cover bg-[url('./assets/newbg.webp')]">
             <div className="min-h-screen bg-black bg-opacity-30 flex flex-col justify-center py-12 sm:px-6 lg:px-8 px-6 ">
         <div className="sm:mx-auto sm:w-full sm:max-w-md">
           <img className="mx-auto w-20 h-20 w-auto bg-black rounded-full" src={img} alt="Artisched logo" />

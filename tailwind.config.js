@@ -5,7 +5,7 @@ module.exports = {
   ],
   theme: {
     extend: {
-      backgroundImage: { 'background': "url('./assets/basket-pattern.jpg')" }
+      backgroundImage: { 'background': "url('./assets/newbg.webp')" }
     },
   },
   plugins: [],
