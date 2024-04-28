@@ -50,7 +50,7 @@ function Services({artisanListCopy}) {
         {
             categories.map((category, key) => {
                 return (
-                        <div key={key} className="block w-1/2 py-10 justify-around text-center border  border-black rounded-lg lg:w-1/4">
+                        <div key={key} className="block w-1/2 py-10 justify-around text-center border hover:bg-orange-300 text-white border-black rounded-lg lg:w-1/4">
                             <Link to={'/search?' + category.value}>
                                 <div>
                                     <img src={category.img} alt={category.title} className="w-10 h-10 block mx-auto"/>

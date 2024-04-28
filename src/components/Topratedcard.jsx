@@ -22,13 +22,13 @@ function Topratedcard() {
   return (
     <>
 
-      <h2 className="py-8 text-center text-orange-400 font-bold text-2xl">
-      <i className ="fa-solid fa-award text-orange-800 text-2xl"></i>  Top Rated Artisans
+      <h2 className="py-8 mt-4 text-center text-orange-600 font-bold text-2xl">
+      <i className ="fa-solid fa-award text-orange-600 text-2xl"></i>  Top Rated Artisans
       </h2>
 
-      <div className="p-1 flex flex-wrap items-center justify-center grid grid-cols-4 grid-rows-1 gap-4">
+      <div className=" flex flex-wrap items-center justify-center grid grid-cols-4 grid-rows-1 gap-4 mb-20">
       {topratedList.map((toprated,key)=>( 
-        <div className="flex-shrink-0 m-6 relative overflow-hidden bg-[#F59E0B] rounded-lg max-w-xs shadow-lg">
+        <div className="flex-shrink-0 m-6 relative overflow-hidden bg-orange-600 rounded-lg max-w-xs shadow-yellow-500 shadow-lg">
          
          <svg
             className="absolute bottom-0 left-0 mb-8"

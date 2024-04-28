@@ -84,7 +84,7 @@ function Registration() {
           </h2>
         </div>
 
-        <div className="mt-8 sm:mx-auto sm:w-auto">
+        <div className="mt-2 sm:mx-auto sm:w-auto">
           <div className=" w-auto bg-black py-8 px-4 shadow sm:rounded-lg sm:px-10 bg-blur bg-black-200 bg-opacity-60 p-6 rounded-lg shadow-lg">
             <Formik
               initialValues={initialValues}
