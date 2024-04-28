@@ -5,14 +5,20 @@ function UserProfile(props) {
   return (
     <div className="bg-white rounded-lg mx-20 my-20">
       <div className="flex inline-block my-20 ">
-        <div className="rounded-full bg-orange-300 w-20 px-4 py-8 mx-4 ml-20 text-center">
+        <div className="rounded-full bg-orange-300 w-20 px-4 py-4 mx-4 ml-20 text-center">
           <span className="font-bold">RA</span>
         </div>
-        <h1 className="w-full text-left my-4 sm:mx-4 xs:pl-4 text-gray-800 dark:text-white lg:text-4xl md:text-3xl sm:text-3xl xs:text-xl font-serif">
+        <h1 className="w-full text-left my-2 sm:mx-4 xs:pl-4 text-gray-800 dark:text-white lg:text-4xl md:text-3xl sm:text-3xl xs:text-xl font-serif">
           Regina Amankwah
         </h1>
+    
       </div>
+
       <section className="w-full overflow-hidden dark:bg-gray-900">
+        <div className="flex  w-full  justify-end mr-50">
+      <button className=" bg-orange-400 rounded-lg px-2 py-2  w-24 text-white text-center mr-20">Edit Profile </button>
+
+        </div>
         <div className="flex flex-col">
           {/* <!-- Profile Image --> */}
 

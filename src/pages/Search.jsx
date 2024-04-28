@@ -173,7 +173,7 @@ function Search() {
                   {artisan.location}
                 </span>
                 <span className="block bg-white rounded-full text-orange-500 text-xs font-bold px-3 py-2 leading-none flex items-center mt-2">
-                  ₵10/hr
+                  ₵60/day
                 </span>
               </div>
             </div>

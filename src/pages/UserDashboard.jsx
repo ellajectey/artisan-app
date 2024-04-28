@@ -1,9 +1,10 @@
 import React, {useState} from 'react';
-import navlogo from "../assets/artisched-green.png";
+import navlogo from "../assets/artisched-orange-logo.png";
 import MessageCard from "../components/MessageCard";
 import { useLocation } from 'react-router-dom';
 import UserProfile from '../components/UserProfile';
 import UserAppointments from '../components/UserAppointments';
+import { Link } from 'react-router-dom';
 
 
 
@@ -61,9 +62,12 @@ function UserDashboard(props) {
                 {/* <!-- section body side nav --> */}
                 <nav aria-label="side bar" 
                     className="min-h-full flex-none flex flex-col items-center text-center bg-black text-gray-400 border-r">
+                        
+                    <Link to="/">
                     <div className="h-16 flex items-center w-full">
-                        <img className="h-6 w-6 mx-auto" src={navlogo} alt='navlogo' />
+                        <img className="h-12 w-12 mx-auto" src={navlogo} alt='navlogo' />
                     </div>
+                    </Link>
 
                     <ul>
                         <li>

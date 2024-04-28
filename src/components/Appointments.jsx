@@ -1,6 +1,7 @@
 import React from "react";
 import BookingCard from "./BookingCard";
-import AppCard from "./AppCard";
+import Calendar from "./Calendar";
+
 
 function Appointments(props) {
   return (
@@ -11,7 +12,7 @@ function Appointments(props) {
           <BookingCard />
         </div>
         <div> 
-        <AppCard/>
+        <Calendar/>
         
         </div>
       </div>
