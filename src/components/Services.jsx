@@ -42,7 +42,7 @@ function Services({artisanListCopy}) {
     return (
        
 
-<div className=" bg-yellow-200 mt-12">
+<div className=" bg-orange-100 mt-12">
 <h2 className="py-8 text-center text-orange-400 font-bold text-2xl">Service Categories</h2>
 
     <div className="flex flex-wrap px-10 pb-10 justify-center mx-auto lg:w-full md:w-5/6 xl:shadow-small-blue">

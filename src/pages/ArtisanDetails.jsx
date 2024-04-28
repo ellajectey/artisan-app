@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 // import ImageGallery from '../components/ImageGallery.jsx'
 import Navbar from "../components/Navbar.jsx";
 import Footer from "../components/Footer.jsx";
-import RatingCard from "../components/RatingCard.jsx";
+import ArtisanRating from "../components/ArtisanRating.jsx";
 import { useLocation, useParams } from "react-router-dom";
 import header from "../assets/artisan-header.png";
 
@@ -205,7 +205,7 @@ function ArtisanDetails() {
               </div>
             </div>
           </div>
-          <RatingCard />
+          <ArtisanRating/>
           <Footer />
         </div>
       )}

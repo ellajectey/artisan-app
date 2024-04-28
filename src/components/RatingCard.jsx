@@ -21,7 +21,7 @@ function RatingCard(props) {
   return (
     <div id="reviews">
       <p className="text-orange-600 font-bold text-2xl text-center">
-        Client Reviews
+        Client Testimonials About Artisched
       </p>
       <div className="grid grid-cols-3 grid-rows-1 gap-4">
         {ratingList.map((ratings, key) => (

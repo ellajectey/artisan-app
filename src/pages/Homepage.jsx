@@ -5,7 +5,7 @@ import Hero from '../components/Hero';
 import Process from '../components/Process';
 import RatingCard from '../components/RatingCard';
 import Services from '../components/Services';
-import Artisancard from '../components/Artisancard';
+import Topratedcard from '../components/Topratedcard';
 import axios from "axios";
 
 function Homepage() {
@@ -29,7 +29,7 @@ function Homepage() {
            <Hero/>
            <Process/>
            {artisanListCopy.length && <Services artisanListCopy={artisanListCopy}/>}
-           <Artisancard/>
+           <Topratedcard/>
            <RatingCard/>
            <Footer/> 
         </div>

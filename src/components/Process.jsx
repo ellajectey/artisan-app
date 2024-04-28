@@ -2,8 +2,8 @@ import React from "react";
 
 function Process() {
   return (
-    <div>
-      <section className="relative overflow-hidden bg-white">
+    <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3 p-4 md:p-8">
+      {/* <section className="relative overflow-hidden bg-white">
         <div className="mt-2 md:mt-0 py-4 pb-4 sm:py-16 lg:pb-24 overflow-hidden">
         <h2 id="process" className="text-center text-orange-600 font-bold text-2xl">Our Process</h2>
           <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8 relative">
@@ -72,7 +72,52 @@ function Process() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
+
+      {/* <!-- Step 1 --> */}
+    <div
+        className="p-8 py-12 sm:p-12 rounded-3xl bg-white border border-orange-600 bg-opacity-50 shadow-2xl shadow-gray-600/10">
+        <div className="space-y-12">
+            <div className="m-auto flex h-12 w-12 items-center justify-center rounded-full bg-orange-50">
+                <span className="font-bold text-xl text-orange-600">1</span>
+            </div>
+            <div className="space-y-4">
+                <h3 className="text-2xl font-semibold text-gray-800 transition">Data Collection</h3>
+                <p className="text-gray-600">Upload diverse datasets containing various types of information for analysis.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    {/* <!-- Step 2 --> */}
+    <div
+        className="p-8 py-12 sm:p-12 rounded-3xl bg-white border border-orange-600 bg-opacity-50 shadow-2xl shadow-gray-600/10">
+        <div className="space-y-12">
+            <div className="m-auto flex h-12 w-12 items-center justify-center rounded-full bg-orange-50">
+                <span className="font-bold text-xl text-orange-600">2</span>
+            </div>
+            <div className="space-y-4">
+                <h3 className="text-2xl font-semibold text-gray-800 transition">Model Training</h3>
+                <p className="text-gray-600">Allow the AI model to learn patterns and insights from the provided data. This
+                    may take some time.</p>
+            </div>
+        </div>
+    </div>
+
+    {/* <!-- Step 3 --> */}
+    <div
+        className="p-8 py-12 sm:p-12 rounded-3xl bg-white border border-orange-600 bg-opacity-50 shadow-2xl shadow-gray-600/10">
+        <div className="space-y-12">
+            <div className="m-auto flex h-12 w-12 items-center justify-center rounded-full bg-orange-50">
+                <span className="font-bold text-xl text-orange-600">3</span>
+            </div>
+            <div className="space-y-4">
+                <h3 className="text-2xl font-semibold text-gray-800 transition">Insights Delivery</h3>
+                <p className="text-gray-600">Receive comprehensive insights and analysis results based on the trained AI
+                    model.</p>
+            </div>
+        </div>
+    </div>
     </div>
   );
 }
